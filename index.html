@@ -569,6 +569,48 @@ __global__ void add(float* a, float* b, float* c) {
     </div>
   </div>
 
+  <!-- IL SALTO — CAPSTONE -->
+  <div class="np-card" id="sec-salto" style="border:1px solid rgba(45,212,255,0.4); background:linear-gradient(135deg, rgba(45,212,255,0.08), rgba(168,85,247,0.07));">
+    <h2><span class="em">🚀</span> Il Salto — fai qualcosa di <i>nuovo</i></h2>
+    <div class="sub">Questo è il blocco che ti distingue da chiunque altro. Il salto verso il MIT o un lab <b>non</b> è fare più corsi: è smettere di consumare e iniziare a <b>produrre</b>. Un solo pezzo di lavoro originale — o che riproduce un paper recente — spiegato pubblicamente, vale più di 50 corsi completati.</div>
+
+    <div style="background:var(--bg2); border:1px solid rgba(45,212,255,0.25); border-radius:12px; padding:1.1rem 1.4rem; margin-bottom:1.3rem;">
+      <div style="font-weight:700; margin-bottom:6px;">🎯 La regola del salto</div>
+      <div style="font-size:0.86rem; color:var(--text2); line-height:1.6;">Scegli <b>UNO</b> dei progetti qui sotto, costruiscilo in piccolo (gira su hardware modesto o gratis nel cloud), e <b>scrivi un post/README che lo spiega come farebbe un insegnante</b>. La spiegazione chiara è metà del valore — è esattamente ciò che MIT e Anthropic notano. Tutti questi sono legati ai paper più recenti <i>e</i> a dove sarà il lavoro nel 2029-2030.</div>
+    </div>
+
+    <div class="np-hire" style="margin-bottom:1.3rem;">
+      <div class="np-hire-item" style="border-color:rgba(52,211,153,0.35);">
+        <div class="h">🧠 Un mini-modello che ragiona <span class="np-tier tier-elite">🟣 Frontiera</span></div>
+        <div class="p">Riproduci l'idea di <b>DeepSeek-R1</b> in piccolo: alleni un modellino con RL (GRPO) a <i>ragionare</i> su un compito stretto (aritmetica, il gioco Countdown). Esiste già una riproduzione open girabile su una sola GPU: <b>TinyZero</b>. È <i>la</i> frontiera del 2025 — reasoning + RL post-training, la skill più richiesta.</div>
+      </div>
+      <div class="np-hire-item" style="border-color:rgba(96,165,250,0.35);">
+        <div class="h">🔬 Un'architettura nuova <span class="np-tier tier-deep">🔵 Profondità</span></div>
+        <div class="p">Il "modello su base nuova": implementa da zero una <b>KAN (Kolmogorov-Arnold Network</b>, 2024) o un piccolo <b>Mamba</b> (state space model), confrontalo con un baseline e scrivi cosa hai capito. Mostra che padroneggi le architetture, non che usi solo librerie. <i>(L'alternativa davvero "deterministica" e logica è la Tsetlin Machine.)</i></div>
+      </div>
+      <div class="np-hire-item" style="border-color:rgba(168,85,247,0.35);">
+        <div class="h">🔍 Apri la scatola nera <span class="np-tier tier-elite">🟣 Anthropic-style</span></div>
+        <div class="p">Prendi un piccolo transformer e <b>trova un "circuito"</b> — come fa una certa cosa al suo interno — con TransformerLens. È il campo dell'interpretability di Anthropic: giovane, poco affollato, dove una 18enne motivata può <b>contribuire ricerca vera</b>. Con l'EU AI Act sarà richiestissimo.</div>
+      </div>
+      <div class="np-hire-item" style="border-color:rgba(232,121,249,0.3);">
+        <div class="h">⚛️ Moonshot opzionale: Quantum ML <span class="np-tier tier-elite">🟣 Per curiosità</span></div>
+        <div class="p">Alleni un piccolo classificatore quantistico su <b>hardware IBM vero</b> (gratis). Bellissimo e futuristico — ma onestamente è una scommessa più lunga: fallo per curiosità, non per il salto immediato.</div>
+      </div>
+    </div>
+
+    <div style="font-weight:700; font-size:1.02rem; margin-bottom:0.6rem;">📚 Risorse per il salto (verificate)</div>
+    <div style="display:flex; flex-direction:column; gap:7px;">
+      <div class="resource-item" style="cursor:default;"><div class="resource-content"><div class="resource-title"><a href="https://github.com/Jiayi-Pan/TinyZero" target="_blank" style="color:inherit;text-decoration:none;">TinyZero — riproduci R1 in piccolo</a></div><div class="resource-meta"><span class="resource-type type-github">github</span>github.com/Jiayi-Pan/TinyZero · reasoning via RL su una GPU · il progetto-salto per eccellenza · <span class="np-tier tier-elite">🟣 Elite</span></div></div></div>
+      <div class="resource-item" style="cursor:default;"><div class="resource-content"><div class="resource-title"><a href="https://arxiv.org/abs/2501.12948" target="_blank" style="color:inherit;text-decoration:none;">DeepSeek-R1 — paper</a></div><div class="resource-meta"><span class="resource-type type-paper">paper</span>arXiv:2501.12948 · RL puro per il ragionamento · il paper da capire prima di TinyZero · <span class="np-tier tier-deep">🔵 Approfondimento</span></div></div></div>
+      <div class="resource-item" style="cursor:default;"><div class="resource-content"><div class="resource-title"><a href="https://github.com/KindXiaoming/pykan" target="_blank" style="color:inherit;text-decoration:none;">pykan — Kolmogorov-Arnold Networks</a></div><div class="resource-meta"><span class="resource-type type-github">github</span>github.com/KindXiaoming/pykan · l'implementazione ufficiale delle KAN · arXiv:2404.19756 · <span class="np-tier tier-deep">🔵 Approfondimento</span></div></div></div>
+      <div class="resource-item" style="cursor:default;"><div class="resource-content"><div class="resource-title"><a href="https://github.com/state-spaces/mamba" target="_blank" style="color:inherit;text-decoration:none;">Mamba — state space models</a></div><div class="resource-meta"><span class="resource-type type-github">github</span>github.com/state-spaces/mamba · l'alternativa al Transformer · arXiv:2312.00752 · <span class="np-tier tier-elite">🟣 Elite</span></div></div></div>
+      <div class="resource-item" style="cursor:default;"><div class="resource-content"><div class="resource-title"><a href="https://github.com/TransformerLensOrg/TransformerLens" target="_blank" style="color:inherit;text-decoration:none;">TransformerLens — interpretability</a></div><div class="resource-meta"><span class="resource-type type-github">github</span>la libreria standard per trovare circuiti nei transformer · porta d'ingresso alla ricerca Anthropic-style · <span class="np-tier tier-elite">🟣 Elite</span></div></div></div>
+      <div class="resource-item" style="cursor:default;"><div class="resource-content"><div class="resource-title"><a href="https://arena3-chapter1-transformer-interp.streamlit.app/" target="_blank" style="color:inherit;text-decoration:none;">ARENA — corso pratico di interpretability & RL</a></div><div class="resource-meta"><span class="resource-type type-course">course</span>il curriculum pratico più usato per entrare nella ricerca AI safety · esercizi guidati · <span class="np-tier tier-deep">🔵 Approfondimento</span></div></div></div>
+    </div>
+
+    <div class="sub" style="margin-top:1.2rem; font-size:0.85rem;">🏆 <b>Dove ti porta:</b> un capstone del genere, ben spiegato su GitHub + un blog post, è ciò che fa dire a un professore del MIT o a un recruiter di Anthropic <i>"questa persona non ha solo studiato — ha capito e ha costruito."</i> È il salto.</div>
+  </div>
+
 </div>
 
 <script>
@@ -1412,6 +1454,7 @@ function buildToc() {
   let html = '<h4>Strategia & progetti</h4>';
   const strat = [
     { id: 'sec-missione', ti: '🚀', name: 'Missione Giorno 1' },
+    { id: 'sec-salto', ti: '⭐', name: 'Il Salto (capstone)' },
     { id: 'sec-bio', ti: '🧬', name: 'Progetto Salute / Bio' },
     { id: 'sec-finanza', ti: '💹', name: 'Finanza, AI & Quant' },
     { id: 'sec-personalizza', ti: '✨', name: 'Personalizza per te' },
