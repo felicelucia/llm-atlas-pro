@@ -4,25 +4,38 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LLM Atlas Pro — Percorso Elite IA 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0a0f14;
-    --bg2: #111820;
-    --bg3: #1a2530;
-    --cyan: #00d4ff;
+    --bg: #070b10;
+    --bg2: #0d141c;
+    --bg3: #18222e;
+    --cyan: #2dd4ff;
     --cyan2: #00a8cc;
     --green: #00ff88;
     --orange: #ff8c00;
     --red: #ff4455;
     --purple: #a855f7;
     --yellow: #ffd700;
-    --text: #e8f4f8;
-    --text2: #8ba8bc;
-    --border: #1e3040;
-    --card: #0f1923;
+    --text: #eef6fa;
+    --text2: #91a8b9;
+    --border: #1c2a38;
+    --card: #0e1822;
+    --shadow: 0 10px 40px rgba(0,0,0,0.4);
+    --glow: 0 0 60px rgba(45,212,255,0.12);
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.6; }
+  html { scroll-behavior: smooth; }
+  body { background: radial-gradient(1200px 600px at 70% -10%, rgba(45,212,255,0.06), transparent 60%), radial-gradient(900px 500px at 0% 10%, rgba(168,85,247,0.05), transparent 55%), var(--bg); color: var(--text); font-family: 'Inter', 'Segoe UI', system-ui, sans-serif; line-height: 1.6; -webkit-font-smoothing: antialiased; letter-spacing: -0.01em; }
+  ::selection { background: rgba(45,212,255,0.25); }
+  a { transition: color 0.15s; }
+  /* scrollbar */
+  ::-webkit-scrollbar { width: 11px; height: 11px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: #243240; border-radius: 6px; border: 2px solid var(--bg); }
+  ::-webkit-scrollbar-thumb:hover { background: #31465a; }
 
   /* HEADER */
   header { background: var(--bg2); border-bottom: 1px solid var(--border); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; position: sticky; top: 0; z-index: 100; }
@@ -146,6 +159,45 @@
     .block-header { padding: 1rem; gap: 1rem; }
     .block-desc, .block-quick, .modules-container { padding-left: 1rem; padding-right: 1rem; }
   }
+
+  /* ===== POLISH v2 — grafica più curata ===== */
+  header { background: rgba(13,20,28,0.78); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); height: 60px; }
+  .logo { letter-spacing: -0.02em; }
+  .hero { padding-top: 5rem; }
+  .hero-tag { font-weight: 700; }
+  .hero h1 { letter-spacing: -0.035em; }
+  .stats { box-shadow: var(--shadow); border-radius: 20px; }
+  .stat-item { transition: transform .2s; }
+  .stat-item:hover { transform: translateY(-3px); }
+  .stat-val { font-size: 2rem; background: linear-gradient(135deg,#7ee7ff,#2dd4ff); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  .block-card { box-shadow: var(--shadow); transition: border-color .2s, transform .2s, box-shadow .2s; border-radius: 22px; }
+  .block-card:hover { transform: translateY(-3px); box-shadow: 0 18px 55px rgba(0,0,0,0.5), var(--glow); }
+  .block-header { transition: background .2s; }
+  .block-header:hover { background: rgba(255,255,255,0.015); }
+  .block-icon { box-shadow: inset 0 0 0 1px rgba(255,255,255,0.05); border-radius: 16px; }
+  .block-title { letter-spacing: -0.02em; }
+  .np-card { box-shadow: var(--shadow); border-radius: 22px; }
+  .np-card h2 { letter-spacing: -0.02em; }
+  .module-row { transition: border-color .15s, background .15s; }
+  .module-row:hover { border-color: #2a3e52; background: rgba(255,255,255,0.012); }
+  .resource-item { transition: border-color .15s, background .15s, transform .12s; }
+  .resource-item:hover { transform: translateX(2px); }
+  .lab-btn { border-radius: 12px; }
+  .scroll-to-top { width: 46px; height: 46px; border-radius: 14px; box-shadow: 0 8px 24px rgba(45,212,255,0.4); transition: transform .15s; }
+  .scroll-to-top:hover { transform: translateY(-3px); }
+
+  /* ===== INDICE / NAVIGAZIONE RAPIDA ===== */
+  .toc-fab { position: fixed; bottom: 2rem; left: 2rem; background: linear-gradient(135deg,#3dd9ff,#1ec3f0); color: #04141c; border: none; border-radius: 14px; padding: 11px 18px; font-weight: 700; font-size: 0.85rem; cursor: pointer; z-index: 99; display: flex; align-items: center; gap: 8px; box-shadow: 0 8px 24px rgba(45,212,255,0.35); transition: transform .15s; font-family: inherit; }
+  .toc-fab:hover { transform: translateY(-3px); }
+  .toc-panel { position: fixed; bottom: 5.4rem; left: 2rem; width: 290px; max-height: 72vh; overflow-y: auto; background: rgba(13,20,28,0.97); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid var(--border); border-radius: 18px; padding: 0.7rem; z-index: 99; display: none; box-shadow: var(--shadow); }
+  .toc-panel.open { display: block; animation: tocIn .18s ease; }
+  @keyframes tocIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+  .toc-panel h4 { font-size: 0.68rem; letter-spacing: 2px; text-transform: uppercase; color: var(--text2); padding: 8px 10px 4px; }
+  .toc-link { display: flex; align-items: center; gap: 11px; padding: 8px 10px; border-radius: 10px; cursor: pointer; font-size: 0.87rem; color: var(--text); text-decoration: none; transition: background .12s; }
+  .toc-link:hover { background: rgba(45,212,255,0.1); }
+  .toc-link .ti { width: 22px; text-align: center; flex-shrink: 0; font-size: 1rem; }
+  .toc-sep { height: 1px; background: var(--border); margin: 7px 6px; }
+  @media (max-width: 600px) { .toc-panel { width: calc(100vw - 2rem); left: 1rem; } .toc-fab { left: 1rem; bottom: 1rem; } .scroll-to-top { bottom: 1rem; } }
 </style>
 </head>
 <body>
@@ -168,7 +220,7 @@
     <span>◫</span> PERCORSO ELITE — AGGIORNATO GIUGNO 2026
   </div>
   <h1>Costruisci qualcosa di reale oggi.<br>Capisci come funziona domani.<br><em>Il percorso per diventare elite nell'IA, divertendoti.</em></h1>
-  <p>Non una lista di 900 ore che spaventa, ma un percorso a missioni: costruisci prima, poi capisci. Base + opzionale, un progetto che cresce con te, paper veri letti uno alla volta, snack di matematica e la mentalità che ti rende qualcuno che i lab vogliono. Aggiornato a giugno 2026, con lo sguardo al 2028.</p>
+  <p>Non una lista infinita che spaventa, ma un percorso a missioni: costruisci prima, poi capisci. Base + opzionale, un progetto che cresce con te, paper veri letti uno alla volta, snack di matematica e la mentalità che ti rende qualcuno che i lab vogliono. Aggiornato a giugno 2026, con lo sguardo al 2028.</p>
 </div>
 
 <div class="stats">
@@ -269,7 +321,7 @@
   <!-- MANIFESTO -->
   <div class="np-card np-manifesto">
     <h2><span class="em">🧭</span> Niente ore. Solo missioni.</h2>
-    <div class="sub">Le "900 ore" spaventano e non significano nulla. Questo percorso funziona in un altro modo — leggi queste 6 regole prima di iniziare.</div>
+    <div class="sub">Contare le ore spaventa e non significa nulla. Questo percorso funziona in un altro modo — leggi queste 6 regole prima di iniziare.</div>
     <div class="np-rules">
       <div class="np-rule"><span class="ico">🔨</span><div><div class="t">Costruisci prima, capisci dopo</div><div class="d">Fai una cosa che funziona oggi. La teoria diventa la caccia alle risposte di "perché funziona".</div></div></div>
       <div class="np-rule"><span class="ico">🟢</span><div><div class="t">Base vs Opzionale</div><div class="d">Segui solo il <b>Base</b> per arrivare ovunque. L'Approfondimento e l'Elite sono per quando vuoi di più.</div></div></div>
@@ -286,7 +338,7 @@
   </div>
 
   <!-- MISSIONE GIORNO 1 -->
-  <div class="np-card np-mission">
+  <div class="np-card np-mission" id="sec-missione">
     <span class="badge">⚡ MISSIONE GIORNO 1</span>
     <h2><span class="em">🚀</span> Costruisci qualcosa di reale oggi</h2>
     <div class="sub">Prima di qualsiasi matematica o teoria. In poche ore hai un'app AI tua, online, che funziona davvero. È il "wow" che ti fa innamorare — e il tuo primo progetto da mostrare.</div>
@@ -374,7 +426,7 @@ __global__ void add(float* a, float* b, float* c) {
   </div>
 
   <!-- COSTRUIRE QUALCOSA CHE VALE: BIO/SALUTE -->
-  <div class="np-card" style="border:1px solid rgba(52,211,153,0.3); background:linear-gradient(135deg, rgba(52,211,153,0.06), rgba(168,85,247,0.04));">
+  <div class="np-card" id="sec-bio" style="border:1px solid rgba(52,211,153,0.3); background:linear-gradient(135deg, rgba(52,211,153,0.06), rgba(168,85,247,0.04));">
     <h2><span class="em">🧬</span> Costruire qualcosa che vale</h2>
     <div class="sub">Non basta imparare l'IA — l'elite la <b>usa per costruire qualcosa di reale</b>. La tua scommessa: <b>AI per la salute</b>, la frontiera ad alto impatto secondo Dario Amodei. Ecco come pensarci come un fondatore, non come uno studente.</div>
 
@@ -426,7 +478,7 @@ __global__ void add(float* a, float* b, float* c) {
   </div>
 
   <!-- FINANZA, AI & QUANT -->
-  <div class="np-card" style="border:1px solid rgba(96,165,250,0.3); background:linear-gradient(135deg, rgba(96,165,250,0.06), rgba(0,212,255,0.03));">
+  <div class="np-card" id="sec-finanza" style="border:1px solid rgba(96,165,250,0.3); background:linear-gradient(135deg, rgba(96,165,250,0.06), rgba(0,212,255,0.03));">
     <h2><span class="em">💹</span> Finanza, AI & Quant</h2>
     <div class="sub">I mercati sono <b>dati puri</b> — il terreno perfetto per chi ha una mente quantitativa. È anche uno dei campi più <b>meritocratici e pagati</b> al mondo: a Jane Street o Two Sigma contano i risultati, non l'età. Per una giovane brava in matematica è una porta enorme.</div>
 
@@ -465,7 +517,7 @@ __global__ void add(float* a, float* b, float* c) {
   </div>
 
   <!-- PERSONALIZZA PER I TUOI INTERESSI -->
-  <div class="np-card" style="border:1px solid rgba(168,85,247,0.3); background:linear-gradient(135deg, rgba(168,85,247,0.06), rgba(0,0,0,0));">
+  <div class="np-card" id="sec-personalizza" style="border:1px solid rgba(168,85,247,0.3); background:linear-gradient(135deg, rgba(168,85,247,0.06), rgba(0,0,0,0));">
     <h2><span class="em">✨</span> Personalizza: un progetto sul TUO interesse</h2>
     <div class="sub">L'IA è più potente quando la punti su qualcosa che ti appassiona davvero. Scegli l'angolo che ti accende — ognuno è un progetto reale e costruibile, con il tuo edge bilingue EU+中文.</div>
     <div class="np-hire">
@@ -532,6 +584,9 @@ showMath();
 </div>
 
 <button class="scroll-to-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<button class="toc-fab" id="tocFab" onclick="toggleToc()">☰ Indice</button>
+<div class="toc-panel" id="tocPanel"></div>
 
 <script>
 const DATA = [
@@ -1209,7 +1264,6 @@ function renderBlocks() {
       <div class="block-quick">
         <div class="bq-item"><strong>${block.modules.length}</strong> moduli</div>
         <div class="bq-item"><strong>${doneRes}/${totalRes}</strong> risorse</div>
-        <div class="bq-item"><strong>${block.hours}</strong> stimate</div>
         <div class="bq-item"><strong>${block.practices}</strong> esercizi pratici</div>
       </div>
       <div class="modules-container" id="modules-${block.id}">
@@ -1230,7 +1284,7 @@ function renderModule(block, mod, mi) {
         <div class="module-dot ${isDone ? 'done' : ''}"></div>
         <div class="module-info">
           <div class="module-name">${mod.name}</div>
-          <div class="module-sub">${mod.sub}</div>
+          <div class="module-sub">${stripHours(mod.sub)}</div>
         </div>
         <div class="module-tag">${doneCount}/${mod.resources.length}</div>
         <div class="module-toggle" id="tog-${block.id}-${mi}">▾</div>
@@ -1251,13 +1305,23 @@ function renderResource(block, mod, r, ri) {
       </div>
       <div class="resource-content">
         <div class="resource-title">${r.url ? `<a href="${r.url}" target="_blank" style="color:inherit;text-decoration:none;" onmouseover="this.style.color='#00d4ff'" onmouseout="this.style.color=''">${r.title}</a>` : r.title}</div>
-        <div class="resource-meta"><span class="resource-type type-${r.type}">${r.type}</span>${r.meta}</div>
+        <div class="resource-meta"><span class="resource-type type-${r.type}">${r.type}</span>${stripHours(r.meta)}</div>
       </div>
     </div>
   `;
 }
 
 function encodeId(s) { return s.replace(/[^a-zA-Z0-9]/g, '_'); }
+
+// Rimuove ogni riferimento alle ore (~Xh) dal testo
+function stripHours(s) {
+  return s
+    .replace(/\s*[·•]?\s*~\s*\d+(?:[.,]\d+)?\s*h\b/gi, '')
+    .replace(/^\s*[·•]\s*/, '')
+    .replace(/\s*[·•]\s*$/, '')
+    .replace(/·\s*·/g, '·')
+    .trim();
+}
 
 function isChecked(blockId, modName, ri) {
   return localStorage.getItem(`llm_${blockId}_${encodeId(modName)}_${ri}`) === '1';
@@ -1313,6 +1377,49 @@ window.addEventListener('scroll', () => {
 
 renderBlocks();
 updateGlobal();
+
+// ===================== INDICE / NAVIGAZIONE =====================
+function buildToc() {
+  const panel = document.getElementById('tocPanel');
+  let html = '<h4>Strategia & progetti</h4>';
+  const strat = [
+    { id: 'sec-missione', ti: '🚀', name: 'Missione Giorno 1' },
+    { id: 'sec-bio', ti: '🧬', name: 'Progetto Salute / Bio' },
+    { id: 'sec-finanza', ti: '💹', name: 'Finanza, AI & Quant' },
+    { id: 'sec-personalizza', ti: '✨', name: 'Personalizza per te' },
+  ];
+  strat.forEach(s => {
+    html += `<a class="toc-link" onclick="tocGo('${s.id}')"><span class="ti">${s.ti}</span>${s.name}</a>`;
+  });
+  html += '<div class="toc-sep"></div><h4>Il percorso</h4>';
+  DATA.forEach(b => {
+    html += `<a class="toc-link" onclick="tocGo('block-${b.id}')"><span class="ti">${b.icon}</span>${b.title}</a>`;
+  });
+  panel.innerHTML = html;
+}
+function toggleToc() { document.getElementById('tocPanel').classList.toggle('open'); }
+function tocGo(id) {
+  const el = document.getElementById(id);
+  if (el) {
+    const block = el.closest('.block-card');
+    // apri il blocco se chiuso
+    const mods = el.querySelector ? el.querySelector('.modules-container') : null;
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    el.style.transition = 'box-shadow .3s';
+    el.style.boxShadow = '0 0 0 2px var(--cyan), var(--glow)';
+    setTimeout(() => { el.style.boxShadow = ''; }, 1200);
+  }
+  document.getElementById('tocPanel').classList.remove('open');
+}
+buildToc();
+// chiudi indice cliccando fuori
+document.addEventListener('click', (e) => {
+  const panel = document.getElementById('tocPanel');
+  const fab = document.getElementById('tocFab');
+  if (panel.classList.contains('open') && !panel.contains(e.target) && !fab.contains(e.target)) {
+    panel.classList.remove('open');
+  }
+});
 </script>
 
 <!-- ===================== LABS SYSTEM ===================== -->
