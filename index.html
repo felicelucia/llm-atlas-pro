@@ -703,6 +703,7 @@ __global__ void add(float* a, float* b, float* c) {
     </div>
 
     <div style="font-weight:700; font-size:1.02rem; margin-bottom:0.5rem;">🚩 Come costruirlo (dal facile al vero)</div>
+    <div style="margin-bottom:0.8rem;"><a href="guides/costruisci-un-mamba.md" target="_blank" style="display:inline-flex; align-items:center; gap:6px; background:rgba(249,115,22,0.12); border:1px solid rgba(249,115,22,0.35); color:#f97316; border-radius:10px; padding:6px 14px; font-size:0.85rem; font-weight:600; text-decoration:none;">📖 Apri la guida passo-passo completa →</a></div>
     <div class="np-steps">
       <div class="np-step"><div class="n" style="background:#f97316; color:#1a0c00;">1</div><div class="body"><b>Capisci l'intuizione</b> — leggi la guida visiva di Maarten Grootendorst, la più chiara in assoluto. <span class="np-tier tier-base">🟢 Base</span></div></div>
       <div class="np-step"><div class="n" style="background:#f97316; color:#1a0c00;">2</div><div class="body"><b>Leggi un'implementazione minimale</b> — <code>mamba-minimal</code>: un solo file PyTorch, leggibile riga per riga. <span class="np-tier tier-base">🟢 Base</span></div></div>
@@ -749,6 +750,32 @@ __global__ void add(float* a, float* b, float* c) {
       <div style="font-weight:700; margin-bottom:6px;">🛠 Il metodo "studia e ricostruisci"</div>
       <div style="font-size:0.86rem; color:var(--text2); line-height:1.6;">Scegli uno di questi repo → clona → trova il <b>punto d'ingresso</b> (il file che parte) → segui il flusso e disegna l'architettura su carta → riscrivi una versione <i>minimale</i> tua → pubblica un <b>teardown</b> ("come funziona X in 300 righe"). Questo singolo esercizio ti insegna ingegneria reale <b>e</b> ti regala un pezzo di portfolio che la gente legge.</div>
     </div>
+  </div>
+
+  <!-- PLAYBOOK DI JENSEN HUANG -->
+  <div class="np-card" id="sec-jensen" style="border:1px solid rgba(118,185,0,0.35); background:linear-gradient(135deg, rgba(118,185,0,0.06), rgba(45,212,255,0.03));">
+    <h2><span class="em">🟢</span> Il playbook di Jensen Huang per i prossimi 10 anni</h2>
+    <div class="sub">Dalla lecture di Jensen Huang (CEO di NVIDIA) a Stanford: non nozioni, ma <b>principi mentali</b> per ragionare come chi sta costruendo il futuro. Sono le idee che ti fanno vedere dove va il mondo prima degli altri.</div>
+    <div class="np-hire">
+      <div class="np-hire-item"><div class="h">⚙️ Co-design batte tutto</div><div class="p">Ottimizzare un solo strato dà miglioramenti lineari; progettare tutti gli strati <i>insieme</i> (chip + software + rete) dà miglioramenti che si moltiplicano. NVIDIA ha fatto 1.000.000× in 10 anni così. Vale per l'hardware, per i prodotti e per le organizzazioni.</div></div>
+      <div class="np-hire-item"><div class="h">🧭 Ragiona dai primi principi</div><div class="p">La ricerca di mercato ti dice cosa vogliono i clienti <i>oggi</i>. Il ragionamento dai primi principi ti dice cosa servirà <i>domani</i>. NVIDIA ha costruito un sistema da miliardi per un mercato di zero clienti — perché la logica diceva che sarebbe arrivato.</div></div>
+      <div class="np-hire-item"><div class="h">💸 L'inferenza è dove si fanno i soldi</div><div class="p">Il training crea l'intelligenza, ma l'<i>inferenza</i> (generare i token) la consegna — ed è lì che gira il business. Il collo di bottiglia è la banda di memoria, non il calcolo. Ottimizza il vincolo reale, non la metrica facile da misurare.</div></div>
+      <div class="np-hire-item"><div class="h">🔀 Il pattern determina l'architettura</div><div class="p">Gli agenti calcolano in modo diverso dal training. Capisci <i>come</i> un carico di lavoro è fatto prima di scrivere una riga — tutto il resto è indovinare. È il principio dietro i nuovi chip pensati per gli agenti.</div></div>
+      <div class="np-hire-item"><div class="h">⚡ Il prossimo collo di bottiglia: l'energia</div><div class="p">Dopo i chip viene l'energia — probabilmente servirà ~1000× di quella attuale. Il calcolo passa da "a richiesta" a "continuo". Token per watt è la metrica da inseguire. Per questo è il momento migliore per investire in energia sostenibile.</div></div>
+      <div class="np-hire-item"><div class="h">📈 La traiettoria è leggibile</div><div class="p">GPT ha reso ovvi gli agenti; gli agenti renderanno ovvi gli sciami di agenti. I segnali ci sono — ragiona a partire da essi invece di aspettare la conferma del mercato. <i>È così che diventi chi costruisce, non chi noleggia.</i></div></div>
+    </div>
+    <div style="margin-top:1rem; font-size:0.84rem; color:var(--text2); line-height:1.6;">💡 <b>La lezione che lega tutto:</b> il mondo del computing è cambiato in modo fondamentale per la prima volta dal 1964. Chi lo capisce come un <i>fatto dai primi principi</i> ricostruirà lo stack nel modo giusto; chi lo tratta come un aggiornamento passerà il decennio a fare debug di assunzioni mai vere. <b>È il momento migliore degli ultimi 60 anni per essere chi ricostruisce.</b></div>
+  </div>
+
+  <!-- NOVITÀ (aggiornabile via script) -->
+  <div class="np-card" id="sec-novita" style="border:1px solid rgba(0,212,255,0.3);">
+    <h2><span class="em">📰</span> Novità dal mondo dell'IA</h2>
+    <div class="sub">Questa sezione si aggiorna con uno script che usa la tua API key Claude (in locale, mai esposta). Vedi <code>scripts/README.md</code> nel repo.</div>
+    <!-- NEWS:START -->
+    <div style="font-size:0.88rem; color:var(--text2); line-height:1.7;">
+      <p>Nessun aggiornamento ancora. Lancia <code>python scripts/update_news.py</code> per popolare questa sezione con le ultime novità.</p>
+    </div>
+    <!-- NEWS:END -->
   </div>
 
 </div>
@@ -1683,6 +1710,8 @@ function buildToc() {
     { id: 'sec-olimpiadi', ti: '🏅', name: 'Olimpiadi di Matematica' },
     { id: 'sec-mamba', ti: '🐍', name: 'Costruisci un Mamba' },
     { id: 'sec-viral', ti: '💥', name: 'Progetti virali su GitHub' },
+    { id: 'sec-jensen', ti: '🟢', name: 'Playbook di Jensen Huang' },
+    { id: 'sec-novita', ti: '📰', name: 'Novità dal mondo IA' },
   ];
   strat.forEach(s => {
     html += `<a class="toc-link" onclick="tocGo('${s.id}')"><span class="ti">${s.ti}</span>${s.name}</a>`;
