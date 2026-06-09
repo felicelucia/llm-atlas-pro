@@ -611,6 +611,65 @@ __global__ void add(float* a, float* b, float* c) {
     <div class="sub" style="margin-top:1.2rem; font-size:0.85rem;">🏆 <b>Dove ti porta:</b> un capstone del genere, ben spiegato su GitHub + un blog post, è ciò che fa dire a un professore del MIT o a un recruiter di Anthropic <i>"questa persona non ha solo studiato — ha capito e ha costruito."</i> È il salto.</div>
   </div>
 
+  <!-- COSTRUISCI UN MAMBA -->
+  <div class="np-card" id="sec-mamba" style="border:1px solid rgba(249,115,22,0.35); background:linear-gradient(135deg, rgba(249,115,22,0.07), rgba(45,212,255,0.03));">
+    <h2><span class="em">🐍</span> Approfondimento: costruisci un Mamba</h2>
+    <div class="sub">Mamba è l'alternativa più elegante al Transformer: invece dell'attention (che costa O(n²)), usa gli <b>state space models</b> — scala in modo lineare e gestisce sequenze lunghissime. Costruirne uno piccolo da zero è un capstone perfetto: profondo, di frontiera, e <b>raro</b> tra chi parte da giovane.</div>
+
+    <div style="background:var(--bg2); border:1px solid rgba(249,115,22,0.25); border-radius:12px; padding:1.1rem 1.4rem; margin-bottom:1.3rem;">
+      <div style="font-weight:700; margin-bottom:6px;">💡 L'idea in una frase</div>
+      <div style="font-size:0.86rem; color:var(--text2); line-height:1.6;">Un Transformer, per generare la parola n, riguarda <i>tutte</i> le n-1 parole precedenti (costoso). Mamba invece mantiene uno <b>stato compresso</b> che aggiorna passo dopo passo — come una memoria che scorre. Il trucco geniale è renderlo <b>selettivo</b>: decide cosa ricordare e cosa dimenticare in base all'input. Da qui il nome "selective state space".</div>
+    </div>
+
+    <div style="font-weight:700; font-size:1.02rem; margin-bottom:0.5rem;">🚩 Come costruirlo (dal facile al vero)</div>
+    <div class="np-steps">
+      <div class="np-step"><div class="n" style="background:#f97316; color:#1a0c00;">1</div><div class="body"><b>Capisci l'intuizione</b> — leggi la guida visiva di Maarten Grootendorst, la più chiara in assoluto. <span class="np-tier tier-base">🟢 Base</span></div></div>
+      <div class="np-step"><div class="n" style="background:#f97316; color:#1a0c00;">2</div><div class="body"><b>Leggi un'implementazione minimale</b> — <code>mamba-minimal</code>: un solo file PyTorch, leggibile riga per riga. <span class="np-tier tier-base">🟢 Base</span></div></div>
+      <div class="np-step"><div class="n" style="background:#60a5fa;">3</div><div class="body"><b>Riscrivilo a mano</b> e allenalo su un piccolo dataset di testo (stile makemore). Confrontalo con un mini-Transformer. <span class="np-tier tier-deep">🔵 Approfondimento</span></div></div>
+      <div class="np-step"><div class="n" style="background:#c084fc;">4</div><div class="body"><b>Scrivi un teardown</b> — un post che spiega come funziona Mamba con i tuoi disegni. <i>Spiegarlo</i> è ciò che ti fa notare. <span class="np-tier tier-elite">🟣 Il salto</span></div></div>
+    </div>
+
+    <div style="font-weight:700; font-size:1.02rem; margin:1.4rem 0 0.6rem;">📚 Risorse Mamba (verificate)</div>
+    <div style="display:flex; flex-direction:column; gap:7px;">
+      <div class="resource-item" style="cursor:default;"><div class="resource-content"><div class="resource-title"><a href="https://newsletter.maartengrootendorst.com/p/a-visual-guide-to-mamba-and-state" target="_blank" style="color:inherit;text-decoration:none;">A Visual Guide to Mamba — Maarten Grootendorst</a></div><div class="resource-meta"><span class="resource-type type-article">article</span>la spiegazione visiva più chiara di Mamba e degli state space models · <span class="np-tier tier-base">🟢 Base</span></div></div></div>
+      <div class="resource-item" style="cursor:default;"><div class="resource-content"><div class="resource-title"><a href="https://github.com/johnma2006/mamba-minimal" target="_blank" style="color:inherit;text-decoration:none;">mamba-minimal — johnma2006</a></div><div class="resource-meta"><span class="resource-type type-github">github</span>Mamba in un solo file PyTorch leggibile · perfetto per imparare · <span class="np-tier tier-base">🟢 Base</span></div></div></div>
+      <div class="resource-item" style="cursor:default;"><div class="resource-content"><div class="resource-title"><a href="https://arxiv.org/abs/2312.00752" target="_blank" style="color:inherit;text-decoration:none;">Mamba — paper originale (Gu & Dao)</a></div><div class="resource-meta"><span class="resource-type type-paper">paper</span>arXiv:2312.00752 · il paper da leggere dopo aver capito l'intuizione · <span class="np-tier tier-deep">🔵 Approfondimento</span></div></div></div>
+      <div class="resource-item" style="cursor:default;"><div class="resource-content"><div class="resource-title"><a href="https://srush.github.io/annotated-s4/" target="_blank" style="color:inherit;text-decoration:none;">The Annotated S4 — Sasha Rush</a></div><div class="resource-meta"><span class="resource-type type-article">article</span>il precursore di Mamba (S4) spiegato col codice · per andare a fondo · <span class="np-tier tier-elite">🟣 Elite</span></div></div></div>
+      <div class="resource-item" style="cursor:default;"><div class="resource-content"><div class="resource-title"><a href="https://github.com/state-spaces/mamba" target="_blank" style="color:inherit;text-decoration:none;">state-spaces/mamba — repo ufficiale</a></div><div class="resource-meta"><span class="resource-type type-github">github</span>l'implementazione ufficiale ottimizzata (CUDA) · per vedere come si fa sul serio · <span class="np-tier tier-elite">🟣 Elite</span></div></div></div>
+    </div>
+  </div>
+
+  <!-- PROGETTI CHE ESPLODONO SU GITHUB -->
+  <div class="np-card" id="sec-viral" style="border:1px solid rgba(74,222,128,0.3); background:linear-gradient(135deg, rgba(74,222,128,0.06), rgba(168,85,247,0.04));">
+    <h2><span class="em">💥</span> Anatomia dei progetti che esplodono su GitHub</h2>
+    <div class="sub">Studiare i progetti AI che diventano virali è una delle scuole più veloci che esistano: impari <b>come sono costruiti</b> e — ancora più importante — <b>perché piacciono</b>. Poi usi gli stessi ingredienti per il tuo.</div>
+
+    <div style="font-weight:700; font-size:1.02rem; margin-bottom:0.6rem;">🔎 I casi da studiare (clona e smonta)</div>
+    <div style="display:flex; flex-direction:column; gap:7px; margin-bottom:1.3rem;">
+      <div class="resource-item" style="cursor:default;"><div class="resource-content"><div class="resource-title"><a href="https://github.com/ollama/ollama" target="_blank" style="color:inherit;text-decoration:none;">Ollama — esegui LLM in locale</a></div><div class="resource-meta"><span class="resource-type type-github">github</span>un comando e hai Llama sul tuo PC · esploso perché rende facile una cosa difficile · <span class="np-tier tier-base">🟢 Base</span></div></div></div>
+      <div class="resource-item" style="cursor:default;"><div class="resource-content"><div class="resource-title"><a href="https://github.com/ggerganov/llama.cpp" target="_blank" style="color:inherit;text-decoration:none;">llama.cpp — Georgi Gerganov</a></div><div class="resource-meta"><span class="resource-type type-github">github</span>far girare LLM su hardware comune · capolavoro di ingegneria, comunità enorme · <span class="np-tier tier-deep">🔵 Approfondimento</span></div></div></div>
+      <div class="resource-item" style="cursor:default;"><div class="resource-content"><div class="resource-title"><a href="https://github.com/OpenInterpreter/open-interpreter" target="_blank" style="color:inherit;text-decoration:none;">Open Interpreter — codice dal linguaggio naturale</a></div><div class="resource-meta"><span class="resource-type type-github">github</span>parli, lui esegue codice sul tuo PC · demo che fanno "wow" in 5 secondi · <span class="np-tier tier-base">🟢 Base</span></div></div></div>
+      <div class="resource-item" style="cursor:default;"><div class="resource-content"><div class="resource-title"><a href="https://github.com/cline/cline" target="_blank" style="color:inherit;text-decoration:none;">Cline — agente di coding in VS Code</a></div><div class="resource-meta"><span class="resource-type type-github">github</span>agente autonomo che scrive codice · esploso nel 2024-25 · ottimo da smontare · <span class="np-tier tier-deep">🔵 Approfondimento</span></div></div></div>
+      <div class="resource-item" style="cursor:default;"><div class="resource-content"><div class="resource-title"><a href="https://github.com/All-Hands-AI/OpenHands" target="_blank" style="color:inherit;text-decoration:none;">OpenHands (ex OpenDevin) — AI software engineer</a></div><div class="resource-meta"><span class="resource-type type-github">github</span>un "ingegnere AI" open source · architettura agentica completa da studiare · <span class="np-tier tier-elite">🟣 Elite</span></div></div></div>
+      <div class="resource-item" style="cursor:default;"><div class="resource-content"><div class="resource-title"><a href="https://github.com/comfyanonymous/ComfyUI" target="_blank" style="color:inherit;text-decoration:none;">ComfyUI — nodi per la generazione di immagini</a></div><div class="resource-meta"><span class="resource-type type-github">github</span>interfaccia a nodi per Stable Diffusion · esploso grazie alla community di creativi · <span class="np-tier tier-base">🟢 Base</span></div></div></div>
+    </div>
+
+    <div style="font-weight:700; font-size:1.02rem; margin-bottom:0.6rem;">✨ Perché esplodono — gli ingredienti ricorrenti</div>
+    <div class="np-hire" style="margin-bottom:1.2rem;">
+      <div class="np-hire-item"><div class="h">🎯 Risolvono un dolore reale</div><div class="p">Una cosa che la gente <i>vuole davvero</i> e prima era difficile. Non una demo: un bisogno.</div></div>
+      <div class="np-hire-item"><div class="h">⚡ Funzionano in 1 comando</div><div class="p"><code>curl | sh</code> o <code>pip install</code> e parte. Zero attrito = adozione di massa.</div></div>
+      <div class="np-hire-item"><div class="h">🎬 Demo che fa "wow"</div><div class="p">Una GIF nel README che in 5 secondi ti fa capire la magia. Il marketing è il prodotto.</div></div>
+      <div class="np-hire-item"><div class="h">🔓 Local-first / gratis / open</div><div class="p">Gira da te, senza account, senza costi. La fiducia e la libertà attirano la community.</div></div>
+      <div class="np-hire-item"><div class="h">📣 Un momento virale</div><div class="p">Un tweet, un video, un thread al momento giusto. Spesso il creatore "impara in pubblico".</div></div>
+      <div class="np-hire-item"><div class="h">🤝 Community curata</div><div class="p">Issue accolte bene, contributi facili, un Discord vivo. Il progetto diventa di tutti.</div></div>
+    </div>
+
+    <div style="background:var(--bg2); border:1px solid rgba(74,222,128,0.25); border-radius:12px; padding:1.1rem 1.4rem;">
+      <div style="font-weight:700; margin-bottom:6px;">🛠 Il metodo "studia e ricostruisci"</div>
+      <div style="font-size:0.86rem; color:var(--text2); line-height:1.6;">Scegli uno di questi repo → clona → trova il <b>punto d'ingresso</b> (il file che parte) → segui il flusso e disegna l'architettura su carta → riscrivi una versione <i>minimale</i> tua → pubblica un <b>teardown</b> ("come funziona X in 300 righe"). Questo singolo esercizio ti insegna ingegneria reale <b>e</b> ti regala un pezzo di portfolio che la gente legge.</div>
+    </div>
+  </div>
+
 </div>
 
 <script>
@@ -1459,6 +1518,8 @@ function buildToc() {
     { id: 'sec-finanza', ti: '💹', name: 'Finanza, AI & Quant' },
     { id: 'sec-personalizza', ti: '✨', name: 'Personalizza per te' },
     { id: 'sec-olimpiadi', ti: '🏅', name: 'Olimpiadi di Matematica' },
+    { id: 'sec-mamba', ti: '🐍', name: 'Costruisci un Mamba' },
+    { id: 'sec-viral', ti: '💥', name: 'Progetti virali su GitHub' },
   ];
   strat.forEach(s => {
     html += `<a class="toc-link" onclick="tocGo('${s.id}')"><span class="ti">${s.ti}</span>${s.name}</a>`;
