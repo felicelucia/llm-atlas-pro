@@ -373,6 +373,58 @@ __global__ void add(float* a, float* b, float* c) {
     </div>
   </div>
 
+  <!-- COSTRUIRE QUALCOSA CHE VALE: BIO/SALUTE -->
+  <div class="np-card" style="border:1px solid rgba(52,211,153,0.3); background:linear-gradient(135deg, rgba(52,211,153,0.06), rgba(168,85,247,0.04));">
+    <h2><span class="em">🧬</span> Costruire qualcosa che vale</h2>
+    <div class="sub">Non basta imparare l'IA — l'elite la <b>usa per costruire qualcosa di reale</b>. La tua scommessa: <b>AI per la salute</b>, la frontiera ad alto impatto secondo Dario Amodei. Ecco come pensarci come un fondatore, non come uno studente.</div>
+
+    <!-- IL TUO EDGE -->
+    <div style="background:var(--bg2); border:1px solid rgba(0,212,255,0.25); border-radius:12px; padding:1.1rem 1.4rem; margin-bottom:1.3rem;">
+      <div style="font-weight:700; margin-bottom:6px;">🌍 Il tuo vantaggio ingiusto: EU + 中文 + English</div>
+      <div style="font-size:0.86rem; color:var(--text2); line-height:1.6;">Il 99% di chi lavora nell'IA legge solo in inglese. Tu leggi <b>i paper cinesi E quelli americani</b>, e capisci la regolazione europea. Sei il <b>ponte tra i tre poli</b> dell'IA mondiale: USA (frontiera), Cina (efficienza & open source), EU (regole & talento raro). Nella ricerca biomedica la Cina produce una quantità enorme di lavoro che pochi in Occidente leggono — questo è il tuo cuneo.</div>
+    </div>
+
+    <!-- STRATEGIA DUE ORIZZONTI -->
+    <div style="font-weight:700; font-size:1.02rem; margin-bottom:0.7rem;">📈 Pensa a due orizzonti, non a uno</div>
+    <div class="np-hire" style="margin-bottom:1.3rem;">
+      <div class="np-hire-item" style="border-color:rgba(74,222,128,0.3);">
+        <div class="h">⚡ ORA — ritorni veloci <span class="np-tier tier-base">🟢 Inizia qui</span></div>
+        <div class="p">Un tool stretto e utile che puoi costruire da sola e vendere: una <b>newsletter/app che sintetizza la ricerca biomedica</b> in EN+cinese per una nicchia (es. oncologia, longevità, un farmaco). Logica Liang Wenfeng: fai di più con meno, parti piccolo.</div>
+      </div>
+      <div class="np-hire-item" style="border-color:rgba(168,85,247,0.3);">
+        <div class="h">🔭 LUNGO — diventare leader <span class="np-tier tier-elite">🟣 Frontiera</span></div>
+        <div class="p">Modelli per <b>biologia computazionale</b>: struttura delle proteine, drug discovery, diagnostica. Logica Amodei: comprimere decenni di progresso medico. Qui essere giovane e bilingue è un fossato che cresce nel tempo.</div>
+      </div>
+    </div>
+
+    <!-- PROGETTO BANDIERA -->
+    <div style="font-weight:700; font-size:1.02rem; margin-bottom:0.5rem;">🚩 Il progetto-bandiera: "BioBridge"</div>
+    <div class="sub" style="margin-bottom:0.8rem;">Un assistente che legge le ultime ricerche biomediche in <b>inglese e cinese</b>, le sintetizza e ti dice cosa c'è di nuovo. Cross-lingua = il tuo cuneo. Costruibile da sola, vendibile, e ti rende <b>la persona che spiega agli altri</b>.</div>
+    <div class="np-steps">
+      <div class="np-step"><div class="n" style="background:#34d399;">1</div><div class="body"><b>Raccogli i paper</b> — usa l'<a href="https://www.ncbi.nlm.nih.gov/books/NBK25501/" target="_blank">API Entrez/PubMed</a> per l'inglese e fonti di preprint cinesi/<a href="https://www.biorxiv.org/" target="_blank">bioRxiv</a> per il resto. <span class="np-tier tier-base">🟢 Base</span></div></div>
+      <div class="np-step"><div class="n" style="background:#34d399;">2</div><div class="body"><b>Trasforma in vettori e raggruppa per tema</b> — embedding + clustering (lo impari nel Blocco 04 con il RAG). <span class="np-tier tier-base">🟢 Base</span></div></div>
+      <div class="np-step"><div class="n" style="background:#34d399;">3</div><div class="body"><b>Sintetizza con Claude</b> in modo bilingue — riassunti chiari, "cosa è cambiato questa settimana", per non-esperti. <span class="np-tier tier-base">🟢 Base</span></div></div>
+      <div class="np-step"><div class="n" style="background:#60a5fa;">4</div><div class="body"><b>Scegli UNA nicchia</b> (es. una malattia, la longevità) — meglio dominare un campo stretto che essere generica. <span class="np-tier tier-deep">🔵 Strategia</span></div></div>
+      <div class="np-step"><div class="n" style="background:#c084fc;">5</div><div class="body"><b>Pubblica il digest gratis</b> ogni settimana → costruisci un pubblico → poi versione a pagamento per ricercatori/analisti biotech. Imparare in pubblico = leadership. <span class="np-tier tier-elite">🟣 Vendi & guida</span></div></div>
+    </div>
+
+    <!-- RISORSE BIO-AI -->
+    <div style="font-weight:700; font-size:1.02rem; margin:1.4rem 0 0.6rem;">📚 Risorse di AI per la biologia (verificate)</div>
+    <div style="display:flex; flex-direction:column; gap:7px;">
+      <div class="resource-item" style="cursor:default;"><div class="resource-content"><div class="resource-title"><a href="https://www.anthropic.com/news/a-new-initiative-for-developing-safe-ai" target="_blank" style="color:inherit;text-decoration:none;">Machines of Loving Grace — Dario Amodei</a></div><div class="resource-meta"><span class="resource-type type-article">essay</span>darioamodei.com · la visione di Amodei su AI + biologia · LETTURA OBBLIGATA · <span class="np-tier tier-base">🟢 Base</span></div></div></div>
+      <div class="resource-item" style="cursor:default;"><div class="resource-content"><div class="resource-title"><a href="https://github.com/google-deepmind/alphafold" target="_blank" style="color:inherit;text-decoration:none;">AlphaFold — DeepMind</a></div><div class="resource-meta"><span class="resource-type type-github">github</span>predizione struttura proteine · Nobel per la Chimica 2024 · il progetto AI-bio più importante di sempre · <span class="np-tier tier-deep">🔵 Approfondimento</span></div></div></div>
+      <div class="resource-item" style="cursor:default;"><div class="resource-content"><div class="resource-title"><a href="https://github.com/facebookresearch/esm" target="_blank" style="color:inherit;text-decoration:none;">ESM / ESMFold — Meta AI</a></div><div class="resource-meta"><span class="resource-type type-github">github</span>protein language models · "GPT per le proteine" · usabile da subito su Hugging Face · <span class="np-tier tier-deep">🔵 Approfondimento</span></div></div></div>
+      <div class="resource-item" style="cursor:default;"><div class="resource-content"><div class="resource-title"><a href="https://huggingface.co/microsoft/biogpt" target="_blank" style="color:inherit;text-decoration:none;">BioGPT & PubMedBERT — Microsoft</a></div><div class="resource-meta"><span class="resource-type type-tool">tool</span>huggingface.co · modelli pre-addestrati su letteratura biomedica · perfetti per BioBridge · <span class="np-tier tier-base">🟢 Base</span></div></div></div>
+      <div class="resource-item" style="cursor:default;"><div class="resource-content"><div class="resource-title"><a href="https://allenai.github.io/scispacy/" target="_blank" style="color:inherit;text-decoration:none;">scispaCy — Allen Institute</a></div><div class="resource-meta"><span class="resource-type type-tool">tool</span>NLP per testi biomedici · estrazione entità (geni, malattie, farmaci) · <span class="np-tier tier-deep">🔵 Approfondimento</span></div></div></div>
+      <div class="resource-item" style="cursor:default;"><div class="resource-content"><div class="resource-title"><a href="https://www.isomorphiclabs.com/" target="_blank" style="color:inherit;text-decoration:none;">Isomorphic Labs — drug discovery con AI</a></div><div class="resource-meta"><span class="resource-type type-article">article</span>lo spin-off di DeepMind per i farmaci · dove va il campo · ispirazione strategica · <span class="np-tier tier-elite">🟣 Elite</span></div></div></div>
+    </div>
+
+    <!-- NOTA REGOLATORIA -->
+    <div style="background:rgba(251,191,36,0.08); border:1px solid rgba(251,191,36,0.25); border-radius:10px; padding:0.9rem 1.2rem; margin-top:1.3rem; font-size:0.85rem; color:var(--text2); line-height:1.6;">
+      <b style="color:#fbbf24;">⚖️ Attenzione regolatoria (il tuo Blocco 10):</b> in Europa la sanità è "alto rischio" sotto l'EU AI Act. <b>Non puoi dare diagnosi o consigli medici.</b> Ma costruire strumenti di <i>sintesi e ricerca</i> per professionisti è perfettamente legale — e proprio il tuo edge regolatorio ti rende preziosa. Costruisci tool che <i>aiutano gli esperti</i>, non che <i>sostituiscono il medico</i>.
+    </div>
+  </div>
+
 </div>
 
 <script>
