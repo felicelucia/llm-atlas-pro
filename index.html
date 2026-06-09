@@ -207,13 +207,47 @@
     <span class="logo-x">✕</span>
     <span>LLM</span> Atlas <span style="color:var(--text2);font-weight:400;font-size:0.9rem;margin-left:4px">Pro</span>
   </div>
-  <div style="display:flex;gap:12px;align-items:center">
+  <div style="display:flex;gap:10px;align-items:center">
+    <button class="hdr-btn" onclick="openProgressModal()" title="Salva o trasferisci il tuo progresso">↑↓ Salva progresso</button>
     <div class="progress-badge">
       <div class="progress-dot"></div>
       Progresso <strong id="global-pct">0%</strong>
     </div>
   </div>
 </header>
+
+<style>
+.hdr-btn { background:var(--bg3); border:1px solid var(--border); color:var(--text2); border-radius:20px; padding:5px 14px; font-size:0.8rem; cursor:pointer; font-family:inherit; transition:all 0.15s; }
+.hdr-btn:hover { border-color:var(--cyan); color:var(--cyan); }
+.modal-overlay { position:fixed; inset:0; background:rgba(0,0,0,0.7); display:none; align-items:center; justify-content:center; z-index:1000; padding:1rem; }
+.modal-overlay.open { display:flex; }
+.modal-box { background:var(--bg2); border:1px solid var(--border); border-radius:18px; padding:1.8rem; max-width:520px; width:100%; box-shadow:var(--shadow); }
+.modal-box h3 { font-size:1.15rem; font-weight:800; margin-bottom:0.4rem; }
+.modal-box p { color:var(--text2); font-size:0.85rem; margin-bottom:1.2rem; line-height:1.5; }
+.modal-box textarea { width:100%; height:90px; background:var(--bg); border:1px solid var(--border); border-radius:10px; color:var(--text); font-family:'Segoe UI',system-ui,sans-serif; font-size:0.78rem; padding:10px; resize:vertical; }
+.modal-row { display:flex; gap:10px; margin-top:1rem; flex-wrap:wrap; }
+.modal-btn { flex:1; min-width:130px; border:none; border-radius:10px; padding:11px 14px; font-size:0.85rem; font-weight:700; cursor:pointer; font-family:inherit; transition:opacity 0.15s; }
+.modal-btn:hover { opacity:0.88; }
+.mb-primary { background:var(--cyan); color:#04121a; }
+.mb-ghost { background:var(--bg3); color:var(--text); border:1px solid var(--border); }
+.modal-close { background:none; border:none; color:var(--text2); font-size:1.4rem; cursor:pointer; float:right; line-height:1; }
+.modal-msg { font-size:0.8rem; margin-top:0.8rem; min-height:1.1rem; }
+.modal-msg.ok { color:var(--green); }
+.modal-msg.err { color:var(--red); }
+</style>
+<div class="modal-overlay" id="progressModal" onclick="if(event.target===this)closeProgressModal()">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeProgressModal()">×</button>
+    <h3>↑↓ Trasferisci il tuo progresso</h3>
+    <p>Il progresso è salvato solo su questo browser. Per continuare su un altro dispositivo (es. telefono ↔ PC), <b>esporta</b> qui il codice, copialo, e <b>importalo</b> sull'altro dispositivo.</p>
+    <textarea id="progressCode" placeholder="Premi 'Esporta' per generare il codice, oppure incolla qui un codice e premi 'Importa'"></textarea>
+    <div class="modal-row">
+      <button class="modal-btn mb-primary" onclick="exportProgress()">⬇ Esporta &amp; copia</button>
+      <button class="modal-btn mb-ghost" onclick="importProgress()">⬆ Importa</button>
+    </div>
+    <div class="modal-msg" id="progressMsg"></div>
+  </div>
+</div>
 
 <div class="hero">
   <div class="hero-tag">
@@ -225,25 +259,72 @@
 
 <div class="stats">
   <div class="stat-item">
-    <div class="stat-val">10</div>
+    <div class="stat-val" id="stat-blocks">13</div>
     <div class="stat-label">Blocchi logici</div>
   </div>
   <div class="stat-item">
-    <div class="stat-val">38</div>
+    <div class="stat-val" id="stat-modules">45</div>
     <div class="stat-label">Moduli</div>
   </div>
   <div class="stat-item">
-    <div class="stat-val" id="total-res">140+</div>
-    <div class="stat-label">Risorse verificate</div>
+    <div class="stat-val" id="total-res">172</div>
+    <div class="stat-label">Risorse</div>
   </div>
   <div class="stat-item">
-    <div class="stat-val">∞</div>
-    <div class="stat-label">Al tuo ritmo</div>
+    <div class="stat-val">~250<span style="font-size:1rem;color:var(--text2)">/919h</span></div>
+    <div class="stat-label">Core / Completo</div>
   </div>
   <div class="stat-item">
     <div class="stat-val" id="done-res">0</div>
     <div class="stat-label">Completate</div>
   </div>
+</div>
+
+<!-- ===================== SELETTORE PERCORSO ===================== -->
+<style>
+.path-selector { max-width:960px; margin:0 auto 2.5rem; padding:0 2rem; }
+.path-selector h3 { font-size:0.75rem; letter-spacing:2px; color:var(--text2); text-transform:uppercase; margin-bottom:0.9rem; }
+.path-options { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:0.8rem; }
+.path-opt { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:1rem 1.2rem; cursor:pointer; transition:all 0.18s; text-align:left; }
+.path-opt:hover { border-color:var(--cyan2); transform:translateY(-2px); }
+.path-opt.active { border-color:var(--cyan); background:linear-gradient(135deg, rgba(0,212,255,0.1), rgba(168,85,247,0.06)); box-shadow:0 0 30px rgba(45,212,255,0.12); }
+.path-opt .po-ico { font-size:1.4rem; margin-bottom:0.4rem; }
+.path-opt .po-title { font-weight:800; font-size:0.98rem; margin-bottom:2px; }
+.path-opt .po-desc { font-size:0.78rem; color:var(--text2); line-height:1.45; }
+.path-opt .po-hours { font-size:0.72rem; color:var(--cyan); margin-top:6px; font-weight:600; }
+.block-card.path-dimmed { opacity:0.4; filter:saturate(0.5); }
+.block-card.path-dimmed:hover { opacity:0.7; }
+.path-hint { font-size:0.8rem; color:var(--text2); margin-top:0.9rem; text-align:center; }
+</style>
+<div class="path-selector">
+  <h3>▸ Scegli il tuo percorso — evidenzia ciò che conta per te</h3>
+  <div class="path-options" id="path-options">
+    <div class="path-opt active" data-path="all" onclick="setPath('all')">
+      <div class="po-ico">⚡</div>
+      <div class="po-title">Atlante completo</div>
+      <div class="po-desc">Tutti i 13 blocchi, dalla matematica al quantum. Per esplorare l'intero campo.</div>
+      <div class="po-hours">~919h · tutto</div>
+    </div>
+    <div class="path-opt" data-path="job" onclick="setPath('job')">
+      <div class="po-ico">🎯</div>
+      <div class="po-title">Voglio un lavoro</div>
+      <div class="po-desc">Programmazione, fondamenta, applicazioni, produzione e portfolio GitHub. Il percorso più diretto all'assunzione.</div>
+      <div class="po-hours">~500h · 6 blocchi</div>
+    </div>
+    <div class="path-opt" data-path="research" onclick="setPath('research')">
+      <div class="po-ico">🔬</div>
+      <div class="po-title">Voglio la ricerca</div>
+      <div class="po-desc">Matematica, fondamenta, architetture, paper avanzati e safety. Per chi punta a lab e PhD.</div>
+      <div class="po-hours">~345h · 5 blocchi</div>
+    </div>
+    <div class="path-opt" data-path="fast" onclick="setPath('fast')">
+      <div class="po-ico">🚀</div>
+      <div class="po-title">Ho poco tempo</div>
+      <div class="po-desc">L'essenziale per costruire ed essere operativa: Python, Karpathy, applicazioni e produzione.</div>
+      <div class="po-hours">~480h · 4 blocchi</div>
+    </div>
+  </div>
+  <div class="path-hint" id="path-hint">Stai vedendo tutti i blocchi. Scegli un percorso per mettere a fuoco ciò che serve a te — gli altri restano visibili ma in secondo piano.</div>
 </div>
 
 <!-- ===================== MANIFESTO ===================== -->
@@ -945,7 +1026,7 @@ const DATA = [
         name: 'Usare gli LLM efficacemente',
         sub: 'Mentalità prima del codice · ~8h',
         resources: [
-          { title: 'Anthropic Claude Academy — corso ufficiale', type: 'course', meta: 'academy.anthropic.com · gratis · certificazione inclusa', url: 'https://academy.anthropic.com' },
+          { title: 'Anthropic Learn — corsi ufficiali Claude', type: 'course', meta: 'anthropic.com/learn · guide e corsi ufficiali gratuiti su Claude', url: 'https://www.anthropic.com/learn' },
           { title: 'Prompt Engineering Guide — DAIR.AI', type: 'article', meta: 'promptingguide.ai · guida più completa e aggiornata su prompt engineering', url: 'https://www.promptingguide.ai/' },
           { title: 'Anthropic Cookbook — esempi pratici', type: 'github', meta: 'github.com/anthropics/anthropic-cookbook · pattern pratici con Claude API', url: 'https://github.com/anthropics/anthropic-cookbook' },
         ]
@@ -1351,7 +1432,7 @@ const DATA = [
           { title: 'Levels.fyi — salary AI/ML engineer (aggiornato 2025)', type: 'tool', meta: 'levels.fyi · stipendi reali per ML Engineer, AI Researcher, Applied Scientist', url: 'https://www.levels.fyi/?compare=Google,Facebook,Microsoft&track=Machine+Learning+Engineer' },
           { title: 'AI Safety Jobs Board — 80,000 Hours', type: 'article', meta: '80000hours.org/job-board · lavori AI safety e alignment · anche per junior', url: 'https://80000hours.org/job-board/' },
           { title: 'Hugging Face Jobs', type: 'tool', meta: 'huggingface.co/jobs · startup e lab AI · spesso remote-first · portfolio conta tantissimo', url: 'https://huggingface.co/jobs' },
-          { title: 'How to Get a Job in AI — Swyx (swyx.io)', type: 'article', meta: 'swyx.io · la guida più pratica e onesta per entrare nel campo AI nel 2025', url: 'https://www.swyx.io/getting-into-ai' },
+          { title: 'The Rise of the AI Engineer — Swyx (Latent Space)', type: 'article', meta: 'latent.space · il saggio che ha definito il ruolo di AI Engineer · come entrare nel campo', url: 'https://www.latent.space/p/ai-engineer' },
         ]
       },
     ]
@@ -1496,6 +1577,9 @@ function updateGlobal() {
   document.getElementById('global-pct').textContent = pct + '%';
   document.getElementById('done-res').textContent = done;
   document.getElementById('total-res').textContent = total;
+  const nMods = DATA.reduce((a,b)=>a+b.modules.length,0);
+  const sb = document.getElementById('stat-blocks'); if (sb) sb.textContent = DATA.length;
+  const sm = document.getElementById('stat-modules'); if (sm) sm.textContent = nMods;
 }
 
 // Scroll to top button
@@ -1506,6 +1590,85 @@ window.addEventListener('scroll', () => {
 
 renderBlocks();
 updateGlobal();
+
+// ===================== SELETTORE PERCORSO =====================
+const PATHS = {
+  all:      { blocks: null, hint: 'Stai vedendo tutti i blocchi. Scegli un percorso per mettere a fuoco ci\u00f2 che serve a te \u2014 gli altri restano visibili ma in secondo piano.' },
+  job:      { blocks: ['prog','fund','app','prod','git','now'], hint: '\ud83c\udfaf Percorso lavoro: in evidenza Programmazione, Fondamenta, Applicazioni, Produzione, Carriera GitHub e Panorama attuale. Gli altri blocchi restano consultabili.' },
+  research: { blocks: ['math','fund','arch','res','safe'], hint: '\ud83d\udd2c Percorso ricerca: in evidenza Matematica, Fondamenta, Architetture, Ricerca Avanzata e Safety. Costruisci la base teorica profonda.' },
+  fast:     { blocks: ['prog','fund','app','prod'], hint: '\ud83d\ude80 Percorso veloce: solo l\'essenziale operativo \u2014 Python, Fondamenta (Karpathy), Applicazioni e Produzione. Salta frontiera e contesto.' }
+};
+function setPath(p) {
+  const cfg = PATHS[p] || PATHS.all;
+  document.querySelectorAll('.path-opt').forEach(el => el.classList.toggle('active', el.dataset.path === p));
+  DATA.forEach(block => {
+    const card = document.getElementById('block-' + block.id);
+    if (!card) return;
+    const inPath = cfg.blocks === null || cfg.blocks.includes(block.id);
+    card.classList.toggle('path-dimmed', !inPath);
+  });
+  const hintEl = document.getElementById('path-hint');
+  if (hintEl) hintEl.textContent = cfg.hint;
+  try { localStorage.setItem('llm-atlas-path', p); } catch(e) {}
+}
+// ripristina percorso salvato
+try {
+  const saved = localStorage.getItem('llm-atlas-path');
+  if (saved && PATHS[saved]) setPath(saved);
+} catch(e) {}
+
+// ===================== EXPORT / IMPORT PROGRESSO =====================
+function openProgressModal() {
+  document.getElementById('progressModal').classList.add('open');
+  document.getElementById('progressMsg').textContent = '';
+  document.getElementById('progressMsg').className = 'modal-msg';
+}
+function closeProgressModal() {
+  document.getElementById('progressModal').classList.remove('open');
+}
+function collectProgress() {
+  const data = {};
+  for (let i = 0; i < localStorage.length; i++) {
+    const k = localStorage.key(i);
+    if (k && (k.startsWith('llm_') || k === 'llm-atlas-path')) data[k] = localStorage.getItem(k);
+  }
+  return data;
+}
+function exportProgress() {
+  const data = collectProgress();
+  const payload = { v: 1, app: 'llm-atlas-pro', date: new Date().toISOString(), data };
+  const code = btoa(unescape(encodeURIComponent(JSON.stringify(payload))));
+  const ta = document.getElementById('progressCode');
+  ta.value = code;
+  ta.select();
+  const msg = document.getElementById('progressMsg');
+  try {
+    navigator.clipboard.writeText(code);
+    msg.textContent = '\u2713 Codice generato e copiato. Incollalo sull\'altro dispositivo e premi Importa.';
+  } catch(e) {
+    msg.textContent = '\u2713 Codice generato. Selezionalo e copialo manualmente.';
+  }
+  msg.className = 'modal-msg ok';
+}
+function importProgress() {
+  const code = document.getElementById('progressCode').value.trim();
+  const msg = document.getElementById('progressMsg');
+  if (!code) { msg.textContent = 'Incolla prima un codice nel campo qui sopra.'; msg.className = 'modal-msg err'; return; }
+  try {
+    const payload = JSON.parse(decodeURIComponent(escape(atob(code))));
+    if (!payload || payload.app !== 'llm-atlas-pro' || !payload.data) throw new Error('formato');
+    Object.keys(payload.data).forEach(k => {
+      if (k.startsWith('llm_') || k === 'llm-atlas-path') localStorage.setItem(k, payload.data[k]);
+    });
+    const n = Object.keys(payload.data).filter(k => k.startsWith('llm_') && payload.data[k] === '1').length;
+    msg.textContent = '\u2713 Progresso importato (' + n + ' risorse completate). Ricarico\u2026';
+    msg.className = 'modal-msg ok';
+    setTimeout(() => location.reload(), 1100);
+  } catch(e) {
+    msg.textContent = '\u2717 Codice non valido. Assicurati di aver copiato tutto il testo esportato.';
+    msg.className = 'modal-msg err';
+  }
+}
 
 // ===================== INDICE / NAVIGAZIONE =====================
 function buildToc() {
