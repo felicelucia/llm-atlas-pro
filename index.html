@@ -167,8 +167,8 @@
   <div class="hero-tag">
     <span>◫</span> PERCORSO ELITE — AGGIORNATO GIUGNO 2026
   </div>
-  <h1>Dalla matematica di base<br>agli agenti autonomi del futuro.<br><em>La mappa completa per dominare l'IA.</em></h1>
-  <p>10 blocchi logici, 38 moduli e 140+ risorse verificate — da algebra lineare e Python a reasoning models, quantum AI, EU AI Act e sicurezza degli agenti autonomi. Percorso aggiornato a giugno 2026, con proiezioni al 2028.</p>
+  <h1>Costruisci qualcosa di reale oggi.<br>Capisci come funziona domani.<br><em>Il percorso per diventare elite nell'IA, divertendoti.</em></h1>
+  <p>Non una lista di 900 ore che spaventa, ma un percorso a missioni: costruisci prima, poi capisci. Base + opzionale, un progetto che cresce con te, paper veri letti uno alla volta, snack di matematica e la mentalità che ti rende qualcuno che i lab vogliono. Aggiornato a giugno 2026, con lo sguardo al 2028.</p>
 </div>
 
 <div class="stats">
@@ -185,8 +185,8 @@
     <div class="stat-label">Risorse verificate</div>
   </div>
   <div class="stat-item">
-    <div class="stat-val">~900h</div>
-    <div class="stat-label">Ore totali</div>
+    <div class="stat-val">∞</div>
+    <div class="stat-label">Al tuo ritmo</div>
   </div>
   <div class="stat-item">
     <div class="stat-val" id="done-res">0</div>
@@ -194,9 +194,222 @@
   </div>
 </div>
 
-<div class="notice">
-  <strong>Come usare questo percorso:</strong> Inizia da <strong>Matematica</strong> se non hai basi — è il prerequisito invisibile. Poi <strong>Python → Fondamenta → Architetture</strong> in sequenza. I blocchi 5-7 sono il mercato del lavoro reale. Gli ultimi 3 (Quantum, Regolazione, Sicurezza) ti distinguono dalla massa e sono fondamentali per diventare <em>elite</em> entro il 2028.
+<!-- ===================== MANIFESTO ===================== -->
+<style>
+.np-wrap { max-width:960px; margin:0 auto; padding:0 2rem; }
+.np-card { background:var(--card); border:1px solid var(--border); border-radius:18px; padding:1.8rem 2rem; margin-bottom:1.5rem; }
+.np-card h2 { font-size:1.4rem; font-weight:800; margin-bottom:0.4rem; display:flex; align-items:center; gap:10px; }
+.np-card h2 .em { font-size:1.5rem; }
+.np-card .sub { color:var(--text2); font-size:0.9rem; margin-bottom:1.2rem; }
+.np-manifesto { background:linear-gradient(135deg, rgba(0,212,255,0.07), rgba(168,85,247,0.07)); border:1px solid rgba(0,212,255,0.2); }
+.np-rules { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem; margin-top:0.5rem; }
+.np-rule { display:flex; gap:12px; align-items:flex-start; }
+.np-rule .ico { font-size:1.4rem; flex-shrink:0; line-height:1.4; }
+.np-rule .t { font-weight:700; font-size:0.92rem; }
+.np-rule .d { font-size:0.83rem; color:var(--text2); line-height:1.55; }
+.np-legend { display:flex; flex-wrap:wrap; gap:1.2rem; margin-top:1.4rem; padding-top:1.2rem; border-top:1px solid var(--border); font-size:0.83rem; }
+.np-legend span { display:flex; align-items:center; gap:7px; color:var(--text2); }
+.np-dot { width:11px; height:11px; border-radius:50%; }
+/* MISSIONE GIORNO 1 */
+.np-mission { border:1px solid rgba(74,222,128,0.3); background:linear-gradient(135deg, rgba(74,222,128,0.06), rgba(0,212,255,0.04)); }
+.np-mission .badge { display:inline-block; background:#4ade80; color:#04140a; font-weight:800; font-size:0.7rem; letter-spacing:1px; padding:3px 12px; border-radius:20px; margin-bottom:10px; }
+.np-steps { display:flex; flex-direction:column; gap:10px; margin-top:1rem; }
+.np-step { display:flex; gap:14px; align-items:flex-start; background:var(--bg2); border:1px solid var(--border); border-radius:12px; padding:12px 16px; }
+.np-step .n { width:26px; height:26px; border-radius:50%; background:#4ade80; color:#04140a; font-weight:800; font-size:0.85rem; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.np-step .body { flex:1; font-size:0.88rem; }
+.np-step .body b { color:var(--text); }
+.np-step a { color:var(--cyan); text-decoration:none; }
+.np-step a:hover { text-decoration:underline; }
+/* PROGETTO FILO */
+.np-flow { display:flex; flex-direction:column; gap:0; margin-top:1rem; }
+.np-flow-item { display:flex; gap:16px; align-items:stretch; }
+.np-flow-rail { display:flex; flex-direction:column; align-items:center; width:34px; flex-shrink:0; }
+.np-flow-node { width:30px; height:30px; border-radius:50%; border:2px solid var(--cyan); background:var(--bg2); color:var(--cyan); font-size:0.85rem; font-weight:800; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.np-flow-line { width:2px; flex:1; background:linear-gradient(var(--cyan), rgba(0,212,255,0.2)); min-height:18px; }
+.np-flow-body { padding-bottom:1.3rem; }
+.np-flow-body .ph { font-size:0.72rem; letter-spacing:1px; text-transform:uppercase; color:var(--text2); }
+.np-flow-body .ti { font-weight:700; font-size:0.98rem; margin:1px 0 2px; }
+.np-flow-body .de { font-size:0.84rem; color:var(--text2); line-height:1.5; }
+.np-flow-body .blk { font-size:0.72rem; color:var(--cyan); margin-top:3px; }
+/* MATH SNACK */
+.np-math { border:1px solid rgba(245,158,11,0.3); background:linear-gradient(135deg, rgba(245,158,11,0.05), rgba(0,0,0,0)); }
+.np-math .problem { background:var(--bg2); border:1px solid var(--border); border-radius:12px; padding:1.3rem 1.5rem; font-size:1.15rem; text-align:center; font-family:'Cambria Math','Georgia',serif; margin:0.5rem 0 1rem; }
+.np-math .answer { display:none; background:rgba(74,222,128,0.08); border:1px solid rgba(74,222,128,0.25); border-radius:10px; padding:0.9rem 1.2rem; margin-bottom:1rem; }
+.np-math .answer.show { display:block; }
+.np-math .answer .a { font-weight:800; color:#4ade80; font-size:1.05rem; }
+.np-math .answer .why { font-size:0.85rem; color:var(--text2); margin-top:5px; line-height:1.55; }
+.np-math-ctrl { display:flex; gap:10px; flex-wrap:wrap; }
+.np-btn { background:var(--bg3); border:1px solid var(--border); color:var(--text); padding:8px 18px; border-radius:9px; cursor:pointer; font-size:0.85rem; font-weight:600; transition:all 0.15s; }
+.np-btn:hover { border-color:var(--cyan); color:var(--cyan); }
+.np-btn.amber { background:#f59e0b; color:#1a1000; border-color:#f59e0b; }
+/* ANTHROPIC */
+.np-hire { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1rem; margin-top:0.6rem; }
+.np-hire-item { background:var(--bg2); border:1px solid var(--border); border-radius:12px; padding:1rem 1.2rem; }
+.np-hire-item .h { font-weight:700; font-size:0.92rem; display:flex; align-items:center; gap:8px; margin-bottom:4px; }
+.np-hire-item .p { font-size:0.83rem; color:var(--text2); line-height:1.55; }
+.np-ethics { margin-top:1.2rem; padding-top:1.2rem; border-top:1px solid var(--border); }
+.np-ethics .hhh { display:flex; gap:1rem; flex-wrap:wrap; margin-top:0.7rem; }
+.np-ethics .hhh > div { flex:1; min-width:160px; background:var(--bg2); border:1px solid var(--border); border-radius:10px; padding:0.8rem 1rem; }
+.np-ethics .hhh b { color:var(--cyan); }
+/* CUDA / COLLAPSIBLE */
+.np-collapse-head { cursor:pointer; display:flex; align-items:center; justify-content:space-between; }
+.np-collapse-head .tog { color:var(--text2); transition:transform 0.2s; }
+.np-collapse-head .tog.open { transform:rotate(180deg); }
+.np-collapse-body { display:none; margin-top:1rem; }
+.np-collapse-body.open { display:block; }
+.np-tier { font-size:0.68rem; padding:2px 9px; border-radius:8px; font-weight:700; letter-spacing:0.5px; }
+.tier-base { background:rgba(74,222,128,0.15); color:#4ade80; }
+.tier-deep { background:rgba(96,165,250,0.15); color:#60a5fa; }
+.tier-elite { background:rgba(168,85,247,0.15); color:#c084fc; }
+.np-code-inline { background:#0a1520; border:1px solid var(--border); border-radius:8px; padding:0.8rem 1rem; font-family:'Consolas',monospace; font-size:0.8rem; color:#7fffb0; margin:0.6rem 0; overflow-x:auto; white-space:pre; }
+</style>
+
+<div class="np-wrap">
+
+  <!-- MANIFESTO -->
+  <div class="np-card np-manifesto">
+    <h2><span class="em">🧭</span> Niente ore. Solo missioni.</h2>
+    <div class="sub">Le "900 ore" spaventano e non significano nulla. Questo percorso funziona in un altro modo — leggi queste 6 regole prima di iniziare.</div>
+    <div class="np-rules">
+      <div class="np-rule"><span class="ico">🔨</span><div><div class="t">Costruisci prima, capisci dopo</div><div class="d">Fai una cosa che funziona oggi. La teoria diventa la caccia alle risposte di "perché funziona".</div></div></div>
+      <div class="np-rule"><span class="ico">🟢</span><div><div class="t">Base vs Opzionale</div><div class="d">Segui solo il <b>Base</b> per arrivare ovunque. L'Approfondimento e l'Elite sono per quando vuoi di più.</div></div></div>
+      <div class="np-rule"><span class="ico">📄</span><div><div class="t">Un paper alla volta</div><div class="d">Non leggere 15 paper in fila. Uno a settimana, capito davvero, vale più di 50 sfogliati.</div></div></div>
+      <div class="np-rule"><span class="ico">🍿</span><div><div class="t">Matematica a piccoli morsi</div><div class="d">Niente 80 ore di matematica in anticipo. Uno "snack" ogni tanto, legato a cosa serve davvero.</div></div></div>
+      <div class="np-rule"><span class="ico">⚖️</span><div><div class="t">L'etica è una skill</div><div class="d">Capire safety e allineamento non è un contorno: è ciò che ti rende qualcuno che i lab vogliono.</div></div></div>
+      <div class="np-rule"><span class="ico">🌍</span><div><div class="t">Resta nel presente</div><div class="d">Il campo cambia ogni mese. Imparare a seguirlo conta più di qualsiasi nozione che impari oggi.</div></div></div>
+    </div>
+    <div class="np-legend">
+      <span><span class="np-dot" style="background:#4ade80"></span> <b>🟢 Base</b> — l'essenziale, fai questo</span>
+      <span><span class="np-dot" style="background:#60a5fa"></span> <b>🔵 Approfondimento</b> — quando vuoi capire meglio</span>
+      <span><span class="np-dot" style="background:#c084fc"></span> <b>🟣 Elite</b> — la frontiera, per distinguerti</span>
+    </div>
+  </div>
+
+  <!-- MISSIONE GIORNO 1 -->
+  <div class="np-card np-mission">
+    <span class="badge">⚡ MISSIONE GIORNO 1</span>
+    <h2><span class="em">🚀</span> Costruisci qualcosa di reale oggi</h2>
+    <div class="sub">Prima di qualsiasi matematica o teoria. In poche ore hai un'app AI tua, online, che funziona davvero. È il "wow" che ti fa innamorare — e il tuo primo progetto da mostrare.</div>
+    <div class="np-steps">
+      <div class="np-step"><div class="n">1</div><div class="body"><b>Crea un account gratuito su <a href="https://claude.ai" target="_blank">Claude.ai</a></b> e ottieni una API key da <a href="https://console.anthropic.com" target="_blank">console.anthropic.com</a>. <span class="np-tier tier-base">🟢 Base</span></div></div>
+      <div class="np-step"><div class="n">2</div><div class="body"><b>Segui il Quickstart ufficiale</b> — la tua prima chiamata a Claude in 5 minuti: <a href="https://docs.anthropic.com/en/docs/get-started" target="_blank">docs.anthropic.com/get-started</a> <span class="np-tier tier-base">🟢 Base</span></div></div>
+      <div class="np-step"><div class="n">3</div><div class="body"><b>Costruisci una mini-app con Streamlit</b>: un chatbot, un riassuntore di testo, o un generatore di idee. Tutorial: <a href="https://docs.streamlit.io/get-started" target="_blank">docs.streamlit.io</a> <span class="np-tier tier-base">🟢 Base</span></div></div>
+      <div class="np-step"><div class="n">4</div><div class="body"><b>Mettila online gratis</b> su <a href="https://share.streamlit.io" target="_blank">Streamlit Community Cloud</a> o <a href="https://huggingface.co/spaces" target="_blank">Hugging Face Spaces</a>. Ora hai un link da condividere. <span class="np-tier tier-base">🟢 Base</span></div></div>
+      <div class="np-step"><div class="n">5</div><div class="body"><b>Caricala su GitHub</b> con un README che spiega cosa fa. Questo è il tuo primo mattone di portfolio. <span class="np-tier tier-deep">🔵 Approfondimento</span></div></div>
+    </div>
+  </div>
+
+  <!-- PROGETTO FILO CONDUTTORE -->
+  <div class="np-card">
+    <h2><span class="em">🧵</span> Un solo progetto che cresce con te</h2>
+    <div class="sub">Non 6 progetti scollegati: <b>uno solo</b> che si evolve attraverso tutto il percorso. Alla fine non hai frammenti, hai una cosa vera e completa da mostrare — la storia che racconti a un colloquio.</div>
+    <div class="np-flow">
+      <div class="np-flow-item"><div class="np-flow-rail"><div class="np-flow-node">1</div><div class="np-flow-line"></div></div><div class="np-flow-body"><div class="ph">Blocco 02 · Fondamenta</div><div class="ti">🧠 Un neurone, poi un mini-GPT</div><div class="de">Costruisci backprop da zero (micrograd), poi un piccolo modello di linguaggio che genera testo carattere per carattere.</div><div class="blk">→ Output: un modello che "scrive" come Dante (o come te)</div></div></div>
+      <div class="np-flow-item"><div class="np-flow-rail"><div class="np-flow-node">2</div><div class="np-flow-line"></div></div><div class="np-flow-body"><div class="ph">Blocco 03 · Architetture</div><div class="ti">⚡ Lo rendi serio</div><div class="de">Riproduci GPT-2 con nanoGPT, lo fai girare su GPU, capisci come si addestra un modello vero.</div><div class="blk">→ Output: il tuo modello, allenato meglio</div></div></div>
+      <div class="np-flow-item"><div class="np-flow-rail"><div class="np-flow-node">3</div><div class="np-flow-line"></div></div><div class="np-flow-body"><div class="ph">Blocco 04 · Applicazioni</div><div class="ti">💬 Diventa un prodotto</div><div class="de">Ci costruisci sopra un'app con RAG: fa domande e risposte sui tuoi documenti, usando l'API di Claude.</div><div class="blk">→ Output: un'app che le persone possono usare</div></div></div>
+      <div class="np-flow-item"><div class="np-flow-rail"><div class="np-flow-node">4</div><div class="np-flow-line"></div></div><div class="np-flow-body"><div class="ph">Blocco 05 · Produzione & Agenti</div><div class="ti">🤖 Diventa un agente</div><div class="de">Le dai degli strumenti (ricerca web, esecuzione codice): ora non risponde solo, agisce e completa task da sola.</div><div class="blk">→ Output: un agente autonomo funzionante</div></div></div>
+      <div class="np-flow-item"><div class="np-flow-rail"><div class="np-flow-node">5</div><div class="np-flow-line"></div></div><div class="np-flow-body"><div class="ph">Blocco 11 · Sicurezza</div><div class="ti">🛡 Lo rendi sicuro</div><div class="de">Aggiungi difese contro prompt injection, scrivi delle evals per misurare quanto è affidabile. Pensi come un ingegnere della sicurezza.</div><div class="blk">→ Output: un sistema robusto, non un giocattolo</div></div></div>
+      <div class="np-flow-item"><div class="np-flow-rail"><div class="np-flow-node">★</div></div><div class="np-flow-body"><div class="ph">Blocco 12 · Carriera</div><div class="ti">🏆 Diventa il tuo biglietto da visita</div><div class="de">README curato, blog post che spiega come l'hai costruito, demo online. Questo progetto <b>è</b> il tuo CV.</div><div class="blk">→ Output: la cosa che fa dire "voglio questa persona nel team"</div></div></div>
+    </div>
+  </div>
+
+  <!-- SNACK MATEMATICA -->
+  <div class="np-card np-math">
+    <h2><span class="em">🍿</span> Snack di matematica</h2>
+    <div class="sub">Un piccolo problema alla volta, sempre legato a <b>perché conta per l'IA</b>. Niente lezioni infinite — solo il gusto di capire la matematica che muove i modelli.</div>
+    <div class="np-math problem" id="math-problem">…</div>
+    <div class="np-math answer" id="math-answer"><div class="a" id="math-a"></div><div class="why" id="math-why"></div></div>
+    <div class="np-math-ctrl">
+      <button class="np-btn amber" id="math-reveal" onclick="revealMath()">Mostra risposta</button>
+      <button class="np-btn" onclick="nextMath()">Prossima sfida →</button>
+    </div>
+  </div>
+
+  <!-- COSA CERCA ANTHROPIC -->
+  <div class="np-card">
+    <h2><span class="em">🎯</span> Cosa ti rende qualcuno che i lab vogliono</h2>
+    <div class="sub">Saper costruire non basta — lo sanno fare in tanti. Questi sono i segnali che lab come Anthropic cercano davvero. Coltivali fin dall'inizio, non alla fine.</div>
+    <div class="np-hire">
+      <div class="np-hire-item"><div class="h">✍️ Scrivere chiaro</div><div class="p">Saper spiegare un'idea complessa in modo semplice. Karpathy, Chris Olah, Jay Alammar sono diventati famosi <i>spiegando</i>. Scrivi un blog, fai thread, insegna.</div></div>
+      <div class="np-hire-item"><div class="h">🔬 Mentalità empirica</div><div class="p">Non "secondo me", ma "ho misurato". Scrivere evals, fare esperimenti, mostrare numeri. È il cuore di come lavora Anthropic.</div></div>
+      <div class="np-hire-item"><div class="h">🛡 Pensare alla sicurezza</div><div class="p">Chiederti "come può andare storto?" prima che succeda. Una persona che pensa all'allineamento vale doppio.</div></div>
+      <div class="np-hire-item"><div class="h">🌱 Open source</div><div class="p">Contribuire a un progetto pubblico è il segnale #1 su un CV AI. Mostra che sai collaborare con codice di altri.</div></div>
+      <div class="np-hire-item"><div class="h">🔁 Imparare in pubblico</div><div class="p">Condividere cosa stai imparando, anche gli errori. Costruisce reputazione e ti fa trovare dalle persone giuste.</div></div>
+      <div class="np-hire-item"><div class="h">🧲 Curiosità ossessiva</div><div class="p">Aprire la scatola nera. Chiedersi "ma cosa fa davvero questo neurone?". È ciò che separa chi usa da chi capisce.</div></div>
+    </div>
+    <div class="np-ethics">
+      <h2 style="font-size:1.05rem"><span class="em">⚖️</span> L'etica non è il contorno</h2>
+      <div class="sub" style="margin-bottom:0.4rem">Anthropic è nata per costruire IA <i>sicura</i>. I tre principi guida con cui Claude è addestrato — impararli ti mette nella loro testa.</div>
+      <div class="hhh">
+        <div><b>Helpful</b> — utile davvero, fa ciò che serve all'umano, non ciò che sembra.</div>
+        <div><b>Honest</b> — onesto, ammette i limiti, non inventa, non manipola.</div>
+        <div><b>Harmless</b> — non dannoso, rifiuta ciò che fa male, anche sotto pressione.</div>
+      </div>
+      <div class="sub" style="margin-top:0.8rem">Leggi: <a href="https://www.anthropic.com/news/core-views-on-ai-safety" target="_blank" style="color:var(--cyan)">Anthropic — Core Views on AI Safety</a> e <a href="https://arxiv.org/abs/2212.08073" target="_blank" style="color:var(--cyan)">Constitutional AI</a>. <span class="np-tier tier-base">🟢 Base</span></div>
+    </div>
+  </div>
+
+  <!-- DOVE VA QUESTA ROBA: CUDA -->
+  <div class="np-card">
+    <div class="np-collapse-head" onclick="toggleCuda()">
+      <h2 style="margin:0"><span class="em">⚙️</span> Dove va questa roba: il fondo dello stack <span class="np-tier tier-elite" style="margin-left:6px">🟣 Elite · Opzionale</span></h2>
+      <span class="tog" id="cuda-tog">▾</span>
+    </div>
+    <div class="np-collapse-body" id="cuda-body">
+      <div class="sub">Sotto a ogni modello c'è la <b>GPU</b>, e sotto la GPU c'è <b>CUDA</b>. Non ti serve all'inizio — ma capire questo livello è ciò che distingue chi <i>usa</i> i modelli da chi li rende veloci. È anche dove c'è più richiesta e meno gente capace.</div>
+      <p style="font-size:0.88rem;color:var(--text2);line-height:1.65;margin-bottom:0.7rem"><b style="color:var(--text)">Perché esiste una GPU?</b> Una rete neurale è fatta di moltiplicazioni di matrici. Moltiplicare due matrici n×n richiede n³ moltiplicazioni — per modelli grandi, miliardi di miliardi. Una CPU le fa una alla volta; una GPU ne fa migliaia <i>in parallelo</i>. Ecco perché Nvidia vale più di quasi ogni altra azienda al mondo.</p>
+      <p style="font-size:0.88rem;color:var(--text2);line-height:1.65;margin-bottom:0.7rem"><b style="color:var(--text)">Cos'è CUDA?</b> È il linguaggio (di Nvidia) con cui scrivi codice che gira <i>sui</i> migliaia di core della GPU. Quando ottimizzi un kernel CUDA, decidi esattamente come migliaia di thread leggono la memoria e fanno i calcoli. È a questo livello che nascono cose come FlashAttention, che ha reso i Transformer 4× più veloci semplicemente riorganizzando come la GPU usa la memoria.</p>
+      <div class="np-code-inline">// Un "kernel" CUDA: ogni thread calcola UN elemento, tutti in parallelo
+__global__ void add(float* a, float* b, float* c) {
+    int i = blockIdx.x * blockDim.x + threadIdx.x;
+    c[i] = a[i] + b[i];   // migliaia di questi, simultaneamente
+}</div>
+      <p style="font-size:0.88rem;color:var(--text2);line-height:1.65;margin-bottom:0.5rem"><b style="color:var(--text)">Dove va il futuro qui?</b> Triton (di OpenAI) ti fa scrivere kernel GPU in stile Python invece di CUDA puro. I modelli diventano sempre più legati all'hardware: chi capisce entrambi i lati — modello <i>e</i> silicio — è raro e prezioso. È una scommessa a lungo termine che pochi 18enni fanno.</p>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:0.8rem;font-size:0.83rem">
+        <a href="https://github.com/gpu-mode/lectures" target="_blank" style="color:var(--cyan)">→ GPU Mode lectures</a>
+        <a href="https://triton-lang.org/" target="_blank" style="color:var(--cyan)">→ Triton</a>
+        <a href="https://youtu.be/l8pRSuU81PU" target="_blank" style="color:var(--cyan)">→ Karpathy: GPU optimization</a>
+      </div>
+    </div>
+  </div>
+
 </div>
+
+<script>
+// ===================== MATH SNACK =====================
+const MATH_SNACKS = [
+  { p: "f(x) = x³ &nbsp; → &nbsp; quanto vale f'(2)?", a: "12", why: "La derivata di x³ è 3x², quindi 3·(2²)=12. Le derivate sono il cuore della backpropagation: il modello impara calcolando quanto ogni peso influenza l'errore." },
+  { p: "Prodotto scalare: [1, 2, 3] · [4, 5, 6] = ?", a: "32", why: "1·4 + 2·5 + 3·6 = 4+10+18 = 32. Questa singola operazione è ciò che fa OGNI neurone e ogni passo di attention. L'intero deep learning è prodotti scalari su larga scala." },
+  { p: "Quante moltiplicazioni servono per moltiplicare due matrici n×n?", a: "n³", why: "Per ogni elemento del risultato (n²) fai n moltiplicazioni → n³ totali. Ecco perché addestrare GPT richiede GPU: con n grande, n³ esplode. È il motivo per cui esiste Nvidia." },
+  { p: "log₂(1024) = ?", a: "10", why: "2¹⁰ = 1024. I logaritmi appaiono ovunque: nell'entropia (quanta informazione), nella loss (cross-entropy), nella complessità degli algoritmi O(log n)." },
+  { p: "sigmoid(0) = 1/(1+e⁰) = ?", a: "0.5", why: "e⁰=1, quindi 1/(1+1)=0.5. La sigmoid trasforma qualsiasi numero in una probabilità tra 0 e 1. È stata la funzione di attivazione che ha avviato il deep learning." },
+  { p: "Gradiente di f(x,y) = x² + y² nel punto (1, 1) = ?", a: "(2, 2)", why: "Le derivate parziali sono 2x e 2y, quindi in (1,1) il gradiente è (2,2). Il gradiente punta verso la salita più ripida: scendere all'opposto è il 'gradiente discendente' che allena ogni modello." },
+  { p: "Bayes: se P(malato)=1% e un test corretto al 99% dà positivo, sei quasi certo di essere malato?", a: "No! ~50%", why: "Per via dei falsi positivi sulla popolazione sana (99% × molti sani). Il teorema di Bayes è alla base di come gli LLM aggiornano le probabilità — e di come NON farsi ingannare dai numeri." },
+  { p: "Softmax di [2, 1, 0]: quale elemento riceve la probabilità più alta?", a: "Il primo (2)", why: "Softmax trasforma numeri qualsiasi in probabilità che sommano a 1, esaltando il più grande. È l'ultimo strato di ogni LLM: decide quale parola generare tra decine di migliaia." },
+];
+let mathIdx = Math.floor(Math.random() * MATH_SNACKS.length);
+function showMath() {
+  const m = MATH_SNACKS[mathIdx];
+  document.getElementById('math-problem').innerHTML = m.p;
+  document.getElementById('math-a').textContent = "Risposta: " + m.a;
+  document.getElementById('math-why').textContent = m.why;
+  document.getElementById('math-answer').classList.remove('show');
+  document.getElementById('math-reveal').style.display = 'inline-block';
+}
+function revealMath() {
+  document.getElementById('math-answer').classList.add('show');
+  document.getElementById('math-reveal').style.display = 'none';
+}
+function nextMath() {
+  mathIdx = (mathIdx + 1) % MATH_SNACKS.length;
+  showMath();
+}
+function toggleCuda() {
+  document.getElementById('cuda-body').classList.toggle('open');
+  document.getElementById('cuda-tog').classList.toggle('open');
+}
+showMath();
+</script>
 
 <div class="sections" id="main-sections">
 <!-- Blocks injected by JS -->
