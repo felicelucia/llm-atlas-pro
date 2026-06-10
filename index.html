@@ -272,8 +272,8 @@
     <div class="stat-label">Risorse</div>
   </div>
   <div class="stat-item">
-    <div class="stat-val">~250<span style="font-size:1rem;color:var(--text2)">/919h</span></div>
-    <div class="stat-label">Core / Completo</div>
+    <div class="stat-val" id="stat-missions">0<span style="font-size:1rem;color:var(--text2)">/8</span></div>
+    <div class="stat-label">Missioni</div>
   </div>
   <div class="stat-item">
     <div class="stat-val" id="done-res">0</div>
@@ -303,20 +303,20 @@
     <div class="path-opt active" data-path="all" onclick="setPath('all')">
       <div class="po-ico">⚡</div>
       <div class="po-title">Atlante completo</div>
-      <div class="po-desc">Tutti i 13 blocchi, dalla matematica al quantum. Per esplorare l'intero campo.</div>
-      <div class="po-hours">tutti i 13 blocchi</div>
+      <div class="po-desc">Tutti i 16 blocchi, dalla matematica al quantum. Per esplorare l'intero campo.</div>
+      <div class="po-hours">tutti i 16 blocchi</div>
     </div>
     <div class="path-opt" data-path="job" onclick="setPath('job')">
       <div class="po-ico">🎯</div>
       <div class="po-title">Voglio un lavoro</div>
       <div class="po-desc">Programmazione, fondamenta, applicazioni, produzione e portfolio GitHub. Il percorso più diretto all'assunzione.</div>
-      <div class="po-hours">6 blocchi</div>
+      <div class="po-hours">7 blocchi</div>
     </div>
     <div class="path-opt" data-path="research" onclick="setPath('research')">
       <div class="po-ico">🔬</div>
       <div class="po-title">Voglio la ricerca</div>
       <div class="po-desc">Matematica, fondamenta, architetture, paper avanzati e safety. Per chi punta a lab e PhD.</div>
-      <div class="po-hours">5 blocchi</div>
+      <div class="po-hours">6 blocchi</div>
     </div>
     <div class="path-opt" data-path="fast" onclick="setPath('fast')">
       <div class="po-ico">🚀</div>
@@ -475,7 +475,26 @@
       <div class="np-hire-item"><div class="h">⌨ Claude Code per costruire</div><div class="p"><a href="https://claude.ai/code" target="_blank" style="color:var(--cyan)">Claude Code</a> è un agente nel terminale che costruisce con te: le missioni vanno il doppio più veloci. Ma la regola è <b>capire ogni riga</b> che accetti — sennò non stai imparando.</div></div>
       <div class="np-hire-item"><div class="h">📚 NotebookLM per i paper</div><div class="p"><a href="https://notebooklm.google.com" target="_blank" style="color:var(--cyan)">NotebookLM</a>: carichi i PDF dei paper e ti genera riassunti, mappe e persino un podcast. Ottimo per il "un paper a settimana".</div></div>
       <div class="np-hire-item"><div class="h">🔍 Ricerca con fonti</div><div class="p"><a href="https://perplexity.ai" target="_blank" style="color:var(--cyan)">Perplexity</a> per domande con fonti citate; la sezione <b>📰 Novità</b> di questo sito si aggiorna con lo script <code>scripts/update_news.py</code> (Claude API + web search, in locale).</div></div>
+      <div class="np-hire-item"><div class="h">📄 Come si legge un paper</div><div class="p">Il metodo <b>three-pass</b> di <a href="https://web.stanford.edu/class/ee384m/Handouts/HowtoReadPaper.pdf" target="_blank" style="color:var(--cyan)">Keshav (Stanford)</a>: 1ª passata titolo/abstract/figure (5 min), 2ª passata contenuto senza dimostrazioni (1h), 3ª passata solo se conta davvero. "Un paper a settimana" diventa possibile.</div></div>
+      <div class="np-hire-item"><div class="h">🎓 Le accademie ufficiali</div><div class="p"><a href="https://academy.anthropic.com" target="_blank" style="color:var(--cyan)">Anthropic Academy</a> (corsi ufficiali Claude, con certificazione) e <a href="https://www.deeplearning.ai/short-courses/" target="_blank" style="color:var(--cyan)">DeepLearning.AI short courses</a> (1-2h l'uno, gratis, fatti con i lab). Vedi la card 🎓 qui sotto per le università.</div></div>
     </div>
+  </div>
+
+  <!-- ACCADEMIE & CORSI UNIVERSITARI -->
+  <div class="np-card" id="sec-accademie" style="border:1px solid rgba(196,132,252,0.3); background:linear-gradient(135deg, rgba(196,132,252,0.05), rgba(45,212,255,0.03));">
+    <h2><span class="em">🎓</span> Accademie & corsi universitari (gratis)</h2>
+    <div class="sub">Le stesse lezioni di Stanford, Harvard e dei lab — gratis online. Non servono <i>tutti</i>: scegli in base a dove sei nel percorso. Quelli segnati 🟢 valgono per quasi tutti.</div>
+    <div style="display:flex; flex-direction:column; gap:7px;">
+      <div class="resource-item" style="cursor:default;"><div class="resource-content"><div class="resource-title"><a href="https://academy.anthropic.com" target="_blank" style="color:inherit;text-decoration:none;">Anthropic Academy</a></div><div class="resource-meta"><span class="resource-type type-course">course</span>i corsi ufficiali su Claude, API e agenti · con certificazione · si integra col Blocco 04 · <span class="np-tier tier-base">🟢 Base</span></div></div></div>
+      <div class="resource-item" style="cursor:default;"><div class="resource-content"><div class="resource-title"><a href="https://github.com/karpathy/LLM101n" target="_blank" style="color:inherit;text-decoration:none;">LLM101n — Eureka Labs (Karpathy)</a></div><div class="resource-meta"><span class="resource-type type-github">github</span>la scuola AI-native di Karpathy: costruire uno storyteller LLM da zero · il seguito naturale di Zero to Hero · <span class="np-tier tier-base">🟢 Base</span></div></div></div>
+      <div class="resource-item" style="cursor:default;"><div class="resource-content"><div class="resource-title"><a href="https://huggingface.co/learn" target="_blank" style="color:inherit;text-decoration:none;">Hugging Face Learn — LLM & Agents course</a></div><div class="resource-meta"><span class="resource-type type-course">course</span>huggingface.co/learn · corsi gratuiti con certificato: LLM, agenti, deep RL · molto pratici · <span class="np-tier tier-base">🟢 Base</span></div></div></div>
+      <div class="resource-item" style="cursor:default;"><div class="resource-content"><div class="resource-title"><a href="https://www.deeplearning.ai/short-courses/" target="_blank" style="color:inherit;text-decoration:none;">DeepLearning.AI — short courses</a></div><div class="resource-meta"><span class="resource-type type-course">course</span>corsi da 1-2 ore, gratis, costruiti CON i lab (Anthropic, LangChain, HF) · perfetti tra una missione e l'altra · <span class="np-tier tier-base">🟢 Base</span></div></div></div>
+      <div class="resource-item" style="cursor:default;"><div class="resource-content"><div class="resource-title"><a href="https://web.stanford.edu/class/cs25/" target="_blank" style="color:inherit;text-decoration:none;">Stanford CS25 — Transformers United</a></div><div class="resource-meta"><span class="resource-type type-video">video</span>il seminario di Stanford sui Transformer, con ospiti come Karpathy e i ricercatori dei lab · lezioni su YouTube · <span class="np-tier tier-deep">🔵 Approfondimento</span></div></div></div>
+      <div class="resource-item" style="cursor:default;"><div class="resource-content"><div class="resource-title"><a href="https://web.stanford.edu/class/cs224n/" target="_blank" style="color:inherit;text-decoration:none;">Stanford CS224N — NLP with Deep Learning</a></div><div class="resource-meta"><span class="resource-type type-video">video</span>IL corso universitario di NLP · lezioni complete su YouTube · dopo le Fondamenta · <span class="np-tier tier-deep">🔵 Approfondimento</span></div></div></div>
+      <div class="resource-item" style="cursor:default;"><div class="resource-content"><div class="resource-title"><a href="https://cs229.stanford.edu/" target="_blank" style="color:inherit;text-decoration:none;">Stanford CS229 — Machine Learning</a></div><div class="resource-meta"><span class="resource-type type-video">video</span>il corso ML classico di Andrew Ng a Stanford · la versione rigorosa e matematica · <span class="np-tier tier-elite">🟣 Elite</span></div></div></div>
+      <div class="resource-item" style="cursor:default;"><div class="resource-content"><div class="resource-title"><a href="http://introtodeeplearning.com/" target="_blank" style="color:inherit;text-decoration:none;">MIT 6.S191 — Introduction to Deep Learning</a></div><div class="resource-meta"><span class="resource-type type-video">video</span>il corso intensivo del MIT, aggiornato ogni anno · per assaggiare come insegna il MIT · <span class="np-tier tier-deep">🔵 Approfondimento</span></div></div></div>
+    </div>
+    <div class="sub" style="margin-top:1rem; font-size:0.84rem;">💡 Regola: i corsi universitari si <b>affiancano</b> alle missioni, non le sostituiscono. Un video di CS224N dopo aver costruito il tuo mini-GPT vale 10 video guardati a freddo.</div>
   </div>
 
   <!-- ===== ZONA APPROFONDIMENTI (collassata) ===== -->
@@ -505,7 +524,7 @@
     <h2><span class="em">🎯</span> Cosa ti rende qualcuno che i lab vogliono</h2>
     <div class="sub">Saper costruire non basta — lo sanno fare in tanti. Questi sono i segnali che lab come Anthropic cercano davvero. Coltivali fin dall'inizio, non alla fine.</div>
     <div class="np-hire">
-      <div class="np-hire-item"><div class="h">✍️ Scrivere chiaro</div><div class="p">Saper spiegare un'idea complessa in modo semplice. Karpathy, Chris Olah, Jay Alammar sono diventati famosi <i>spiegando</i>. Scrivi un blog, fai thread, insegna.</div></div>
+      <div class="np-hire-item"><div class="h">✍️ Scrivere chiaro</div><div class="p">Saper spiegare un'idea complessa in modo semplice. Karpathy, Chris Olah, Jay Alammar sono diventati famosi <i>spiegando</i>. Si impara: <a href="https://developers.google.com/tech-writing" target="_blank" style="color:var(--cyan)">Google Technical Writing</a> (gratis, 2 moduli). Poi scrivi un blog, fai thread, insegna.</div></div>
       <div class="np-hire-item"><div class="h">🔬 Mentalità empirica</div><div class="p">Non "secondo me", ma "ho misurato". Scrivere evals, fare esperimenti, mostrare numeri. È il cuore di come lavora Anthropic.</div></div>
       <div class="np-hire-item"><div class="h">🛡 Pensare alla sicurezza</div><div class="p">Chiederti "come può andare storto?" prima che succeda. Una persona che pensa all'allineamento vale doppio.</div></div>
       <div class="np-hire-item"><div class="h">🌱 Open source</div><div class="p">Contribuire a un progetto pubblico è il segnale #1 su un CV AI. Mostra che sai collaborare con codice di altri.</div></div>
@@ -689,6 +708,8 @@ __global__ void add(float* a, float* b, float* c) {
       <div class="resource-item" style="cursor:default;"><div class="resource-content"><div class="resource-title"><a href="https://projecteuler.net/" target="_blank" style="color:inherit;text-decoration:none;">Project Euler</a></div><div class="resource-meta"><span class="resource-type type-tool">tool</span>projecteuler.net · problemi matematici che si risolvono con il codice · unisce math + Python · <span class="np-tier tier-base">🟢 Base</span></div></div></div>
       <div class="resource-item" style="cursor:default;"><div class="resource-content"><div class="resource-title"><a href="https://deepmind.google/discover/blog/ai-solves-imo-problems-at-silver-medal-level/" target="_blank" style="color:inherit;text-decoration:none;">AlphaProof & AlphaGeometry 2 — DeepMind</a></div><div class="resource-meta"><span class="resource-type type-article">article</span>deepmind.google · l'IA che ha preso l'argento alle IMO 2024 · dove va il reasoning · <span class="np-tier tier-elite">🟣 Elite</span></div></div></div>
       <div class="resource-item" style="cursor:default;"><div class="resource-content"><div class="resource-title"><a href="https://olimpiadi.dm.unibo.it/" target="_blank" style="color:inherit;text-decoration:none;">Olimpiadi della Matematica — Italia (UMI)</a></div><div class="resource-meta"><span class="resource-type type-article">article</span>olimpiadi.dm.unibo.it · le gare italiane ufficiali · come partecipare dalla scuola · <span class="np-tier tier-base">🟢 Base</span></div></div></div>
+      <div class="resource-item" style="cursor:default;"><div class="resource-content"><div class="resource-title"><a href="https://adam.math.hhu.de/" target="_blank" style="color:inherit;text-decoration:none;">Natural Number Game — impara Lean giocando</a></div><div class="resource-meta"><span class="resource-type type-tool">tool</span>adam.math.hhu.de · dimostrazioni formali come un videogioco · è il linguaggio di AlphaProof: olimpiadi + IA si incontrano qui · <span class="np-tier tier-elite">🟣 Elite</span></div></div></div>
+      <div class="resource-item" style="cursor:default;"><div class="resource-content"><div class="resource-title"><a href="https://leanprover-community.github.io/" target="_blank" style="color:inherit;text-decoration:none;">Lean & mathlib — la community</a></div><div class="resource-meta"><span class="resource-type type-tool">tool</span>leanprover-community.github.io · formalizzare la matematica vera · nicchia rarissima e preziosissima · <span class="np-tier tier-elite">🟣 Elite</span></div></div></div>
     </div>
   </div>
 
@@ -976,6 +997,83 @@ const DATA = [
     ]
   },
   {
+    id: 'data',
+    num: '01·B',
+    level: 'PRINCIPIANTE → INTERMEDIO',
+    levelColor: 'c-base',
+    icon: '📊',
+    iconBg: 'bg-base',
+    title: 'Dati & ML classico',
+    subtitle: 'La competenza che domina il lavoro reale',
+    practices: 4,
+    desc: 'L\'80% del lavoro ML vero è dati tabellari e pipeline, non reti neurali: SQL, pandas, scikit-learn, gradient boosting. È anche il modo più veloce per vincere su Kaggle e farsi notare. I lab vogliono gente che sa guardare i dati.',
+    modules: [
+      {
+        name: 'SQL e dati tabellari',
+        sub: 'Il linguaggio dei dati',
+        resources: [
+          { title: 'Intro to SQL — Kaggle Learn', type: 'course', meta: 'kaggle.com/learn · gratis, pratico, con esercizi veri su BigQuery', url: 'https://www.kaggle.com/learn/intro-to-sql' },
+          { title: 'Pandas — Kaggle Learn', type: 'course', meta: 'kaggle.com/learn · manipolare dati in Python · il pane quotidiano', url: 'https://www.kaggle.com/learn/pandas' },
+          { title: 'DuckDB — il database analitico moderno', type: 'tool', meta: 'duckdb.org · SQL velocissimo su file locali · standard emergente 2025-26', url: 'https://duckdb.org/docs/' },
+        ]
+      },
+      {
+        name: 'ML classico con scikit-learn',
+        sub: 'Regressione, classificazione, valutazione',
+        resources: [
+          { title: 'Intro to Machine Learning — Kaggle Learn', type: 'course', meta: 'kaggle.com/learn · il primo modello in un pomeriggio', url: 'https://www.kaggle.com/learn/intro-to-machine-learning' },
+          { title: 'StatQuest — Josh Starmer', type: 'video', meta: 'YouTube · l\'intuizione statistica spiegata meglio di chiunque · BAM!', url: 'https://www.youtube.com/@statquest' },
+          { title: 'scikit-learn — User Guide', type: 'tool', meta: 'scikit-learn.org · la libreria standard del ML classico · ottima documentazione', url: 'https://scikit-learn.org/stable/user_guide.html' },
+        ]
+      },
+      {
+        name: 'Gradient boosting: la regina del tabellare',
+        sub: 'XGBoost e la valutazione seria',
+        resources: [
+          { title: 'Intermediate Machine Learning — Kaggle Learn', type: 'course', meta: 'kaggle.com/learn · XGBoost, pipeline, leakage, cross-validation', url: 'https://www.kaggle.com/learn/intermediate-machine-learning' },
+          { title: 'XGBoost — documentazione', type: 'tool', meta: 'xgboost.readthedocs.io · il modello che vince i tornei sui dati tabellari', url: 'https://xgboost.readthedocs.io/' },
+        ]
+      },
+      {
+        name: 'La palestra: Kaggle',
+        sub: 'Competi, impara dai notebook degli altri',
+        resources: [
+          { title: 'Titanic — la competizione di ingresso', type: 'tool', meta: 'kaggle.com · il rito di passaggio: primo submit in un giorno', url: 'https://www.kaggle.com/c/titanic' },
+          { title: 'Kaggle Competitions', type: 'tool', meta: 'kaggle.com/competitions · medaglie vere su problemi veri · portfolio che parla da solo', url: 'https://www.kaggle.com/competitions' },
+        ]
+      },
+    ]
+  },
+  {
+    id: 'cs',
+    num: '01·C',
+    level: 'FACOLTATIVO · BASE SOLIDA',
+    levelColor: 'c-prog',
+    icon: '💻',
+    iconBg: 'bg-prog',
+    title: 'Fondamenta informatiche',
+    subtitle: 'CS50 e algoritmi — il rigore che resta',
+    practices: 2,
+    desc: 'Facoltativo ma prezioso: il corso introduttivo più bello del mondo (CS50 di Harvard) e gli algoritmi per i colloqui tecnici. Se la scuola te le ha già date, salta. Se punti a MIT o colloqui da big tech, passa di qui.',
+    modules: [
+      {
+        name: 'CS50 — l\'informatica da Harvard',
+        sub: 'Da zero al pensiero computazionale',
+        resources: [
+          { title: 'CS50x — Introduction to Computer Science', type: 'course', meta: 'cs50.harvard.edu · gratis · David Malan è leggendario · certificato incluso', url: 'https://cs50.harvard.edu/x/' },
+        ]
+      },
+      {
+        name: 'Algoritmi per i colloqui',
+        sub: 'Strutture dati e problem solving',
+        resources: [
+          { title: 'NeetCode — la roadmap', type: 'course', meta: 'neetcode.io · i 150 problemi giusti nell\'ordine giusto, con video-soluzioni', url: 'https://neetcode.io/roadmap' },
+          { title: 'LeetCode', type: 'tool', meta: 'leetcode.com · la palestra dei colloqui tecnici · 2-3 problemi a settimana bastano', url: 'https://leetcode.com/' },
+        ]
+      },
+    ]
+  },
+  {
     id: 'fund',
     num: '02',
     level: 'PRINCIPIANTE → INTERMEDIO',
@@ -994,6 +1092,7 @@ const DATA = [
         resources: [
           { title: 'Neural Networks: Zero to Hero — Andrej Karpathy', type: 'video', meta: 'YouTube playlist · LA serie definitiva · ~8h video + hands-on', url: 'https://karpathy.ai/zero-to-hero.html' },
           { title: 'But what is a neural network? — 3Blue1Brown', type: 'video', meta: 'YouTube · Deep Learning serie · visualizzazioni impeccabili', url: 'https://youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi' },
+          { title: 'Practical Deep Learning for Coders — fast.ai', type: 'course', meta: 'course.fast.ai · gratis · top-down: costruisci subito, capisci dopo · perfetto PRIMA di Karpathy se sei all\'inizio', url: 'https://course.fast.ai' },
           { title: 'Deep Learning Specialization — Andrew Ng (Coursera)', type: 'course', meta: '5 corsi · Coursera · gratis in audit · il punto di riferimento accademico', url: 'https://www.coursera.org/specializations/deep-learning' },
         ]
       },
@@ -1184,6 +1283,44 @@ const DATA = [
         resources: [
           { title: 'Modal — cloud per ML workloads', type: 'tool', meta: 'modal.com · deploy GPU functions, training jobs, serving · standard 2025', url: 'https://modal.com' },
           { title: 'Weights & Biases — MLOps platform', type: 'tool', meta: 'wandb.ai · tracking esperimenti, versioning modelli, reports', url: 'https://wandb.ai' },
+        ]
+      },
+    ]
+  },
+  {
+    id: 'rl',
+    num: '05·B',
+    level: 'APPROFONDIMENTO · PONTE VERSO R1',
+    levelColor: 'c-prod',
+    icon: '🎮',
+    iconBg: 'bg-prod',
+    title: 'Reinforcement Learning',
+    subtitle: 'Le basi che rendono comprensibile il reasoning',
+    practices: 3,
+    desc: 'Il ponte mancante: DeepSeek-R1, GRPO e TinyZero (il capstone!) sono RL puro. Senza le basi — reward, policy, value, PPO — restano magia. Con le basi, diventano ovvi. E si imparano giocando.',
+    modules: [
+      {
+        name: 'I concetti: reward, policy, value',
+        sub: 'Il vocabolario del RL',
+        resources: [
+          { title: 'Spinning Up in Deep RL — OpenAI', type: 'course', meta: 'spinningup.openai.com · scritto apposta per chi inizia · teoria + codice', url: 'https://spinningup.openai.com/' },
+          { title: 'RL Course — David Silver (DeepMind)', type: 'video', meta: 'YouTube · il corso classico di chi ha costruito AlphaGo · 10 lezioni', url: 'https://www.youtube.com/playlist?list=PLqYmG7hTraZDM-OYHWgPebj2MfCFzFObQ' },
+        ]
+      },
+      {
+        name: 'Sporcati le mani',
+        sub: 'Agenti che imparano giocando',
+        resources: [
+          { title: 'Deep RL Course — Hugging Face', type: 'course', meta: 'huggingface.co/learn · gratis · alleni agenti su giochi veri, con certificato', url: 'https://huggingface.co/learn/deep-rl-course/unit0/introduction' },
+          { title: 'Gymnasium — gli ambienti standard', type: 'tool', meta: 'gymnasium.farama.org · CartPole, LunarLander: i campi da gioco del RL', url: 'https://gymnasium.farama.org/' },
+        ]
+      },
+      {
+        name: 'Da PPO a GRPO',
+        sub: 'Il filo che porta a DeepSeek-R1',
+        resources: [
+          { title: 'PPO — Proximal Policy Optimization', type: 'paper', meta: 'arXiv:1707.06347 · Schulman et al. · l\'algoritmo dietro RLHF e ChatGPT', url: 'https://arxiv.org/abs/1707.06347' },
+          { title: 'RLHF spiegato — Hugging Face blog', type: 'article', meta: 'huggingface.co/blog/rlhf · come il RL allinea i modelli di linguaggio', url: 'https://huggingface.co/blog/rlhf' },
         ]
       },
     ]
@@ -1498,6 +1635,8 @@ const DATA = [
           { title: 'Last Week in AI — newsletter', type: 'article', meta: 'lastweekin.ai · riassunto settimanale ricerca + news AI · molto pratico', url: 'https://lastweekin.ai/' },
           { title: 'Twitter/X: @karpathy @ylecun @sama @demishassabis', type: 'tool', meta: 'I 4 account AI più importanti da seguire — la conversazione vera avviene qui', url: 'https://twitter.com/karpathy' },
           { title: 'Hugging Face — hub modelli e community', type: 'tool', meta: 'huggingface.co · crea profilo, contribuisci a dataset, segui i trend · GitHub dell\'AI', url: 'https://huggingface.co' },
+          { title: 'First Contributions — la tua prima PR open source', type: 'github', meta: 'github.com/firstcontributions · ti guida passo passo alla prima pull request in 10 minuti · il segnale #1 sul CV inizia qui', url: 'https://github.com/firstcontributions/first-contributions' },
+          { title: 'Good First Issues — dove contribuire', type: 'tool', meta: 'goodfirstissue.dev · issue facili nei progetti veri, filtrate per linguaggio', url: 'https://goodfirstissue.dev/' },
         ]
       },
       {
@@ -1508,6 +1647,7 @@ const DATA = [
           { title: 'AI Safety Jobs Board — 80,000 Hours', type: 'article', meta: '80000hours.org/job-board · lavori AI safety e alignment · anche per junior', url: 'https://80000hours.org/job-board/' },
           { title: 'Hugging Face Jobs', type: 'tool', meta: 'huggingface.co/jobs · startup e lab AI · spesso remote-first · portfolio conta tantissimo', url: 'https://huggingface.co/jobs' },
           { title: 'The Rise of the AI Engineer — Swyx (Latent Space)', type: 'article', meta: 'latent.space · il saggio che ha definito il ruolo di AI Engineer · come entrare nel campo', url: 'https://www.latent.space/p/ai-engineer' },
+          { title: 'The Odin Project — web dev essenziale', type: 'course', meta: 'theodinproject.com · gratis · HTML/CSS/JS/React per trasformare i tuoi progetti in prodotti che la gente usa · facoltativo', url: 'https://www.theodinproject.com/' },
         ]
       },
     ]
@@ -1669,8 +1809,8 @@ updateGlobal();
 // ===================== SELETTORE PERCORSO =====================
 const PATHS = {
   all:      { blocks: null, hint: 'Stai vedendo tutti i blocchi. Scegli un percorso per mettere a fuoco ci\u00f2 che serve a te \u2014 gli altri restano visibili ma in secondo piano.' },
-  job:      { blocks: ['prog','fund','app','prod','git','now'], hint: '\ud83c\udfaf Percorso lavoro: in evidenza Programmazione, Fondamenta, Applicazioni, Produzione, Carriera GitHub e Panorama attuale. Gli altri blocchi restano consultabili.' },
-  research: { blocks: ['math','fund','arch','res','safe'], hint: '\ud83d\udd2c Percorso ricerca: in evidenza Matematica, Fondamenta, Architetture, Ricerca Avanzata e Safety. Costruisci la base teorica profonda.' },
+  job:      { blocks: ['prog','data','fund','app','prod','git','now'], hint: '\ud83c\udfaf Percorso lavoro: in evidenza Programmazione, Dati & ML classico, Fondamenta, Applicazioni, Produzione, Carriera GitHub e Panorama attuale. Gli altri blocchi restano consultabili.' },
+  research: { blocks: ['math','fund','arch','rl','res','safe'], hint: '\ud83d\udd2c Percorso ricerca: in evidenza Matematica, Fondamenta, Architetture, Reinforcement Learning, Ricerca Avanzata e Safety. Costruisci la base teorica profonda.' },
   fast:     { blocks: ['prog','fund','app','prod'], hint: '\ud83d\ude80 Percorso veloce: solo l\'essenziale operativo \u2014 Python, Fondamenta (Karpathy), Applicazioni e Produzione. Salta frontiera e contesto.' }
 };
 function setPath(p) {
@@ -1756,6 +1896,7 @@ function buildToc() {
     { id: 'sec-bio', ti: '🧬', name: 'Progetto Salute / Bio' },
     { id: 'sec-linux', ti: '🐧', name: 'Linux & sicurezza pratica' },
     { id: 'sec-toolbox', ti: '🤖', name: 'Studia con l\'IA' },
+    { id: 'sec-accademie', ti: '🎓', name: 'Accademie & corsi' },
   ];
   strat.forEach(s => {
     html += `<a class="toc-link" onclick="tocGo('${s.id}')"><span class="ti">${s.ti}</span>${s.name}</a>`;
@@ -1823,6 +1964,8 @@ function renderMissions() {
   const n = MISSIONS.filter((_, i) => localStorage.getItem('llm_mission_' + i) === '1').length;
   const c = document.getElementById('missions-count');
   if (c) { c.textContent = n + '/8'; c.style.color = n === 8 ? '#4ade80' : 'var(--cyan)'; }
+  const sm2 = document.getElementById('stat-missions');
+  if (sm2) sm2.innerHTML = n + '<span style="font-size:1rem;color:var(--text2)">/8</span>';
 }
 function toggleMission(i) {
   const k = 'llm_mission_' + i;
