@@ -494,7 +494,15 @@
       <div class="resource-item" style="cursor:default;"><div class="resource-content"><div class="resource-title"><a href="https://cs229.stanford.edu/" target="_blank" style="color:inherit;text-decoration:none;">Stanford CS229 — Machine Learning</a></div><div class="resource-meta"><span class="resource-type type-video">video</span>il corso ML classico di Andrew Ng a Stanford · la versione rigorosa e matematica · <span class="np-tier tier-elite">🟣 Elite</span></div></div></div>
       <div class="resource-item" style="cursor:default;"><div class="resource-content"><div class="resource-title"><a href="http://introtodeeplearning.com/" target="_blank" style="color:inherit;text-decoration:none;">MIT 6.S191 — Introduction to Deep Learning</a></div><div class="resource-meta"><span class="resource-type type-video">video</span>il corso intensivo del MIT, aggiornato ogni anno · per assaggiare come insegna il MIT · <span class="np-tier tier-deep">🔵 Approfondimento</span></div></div></div>
     </div>
-    <div class="sub" style="margin-top:1rem; font-size:0.84rem;">💡 Regola: i corsi universitari si <b>affiancano</b> alle missioni, non le sostituiscono. Un video di CS224N dopo aver costruito il tuo mini-GPT vale 10 video guardati a freddo.</div>
+    <div style="font-weight:700; font-size:1.02rem; margin:1.4rem 0 0.6rem;">📦 I repo GitHub che insegnano (clona e segui)</div>
+    <div style="display:flex; flex-direction:column; gap:7px;">
+      <div class="resource-item" style="cursor:default;"><div class="resource-content"><div class="resource-title"><a href="https://github.com/mlabonne/llm-course" target="_blank" style="color:inherit;text-decoration:none;">llm-course — Maxime Labonne</a></div><div class="resource-meta"><span class="resource-type type-github">github</span>IL corso LLM di GitHub (~40k ⭐): roadmap completa con notebook eseguibili — scientist, engineer, fundamentals · <span class="np-tier tier-base">🟢 Base</span></div></div></div>
+      <div class="resource-item" style="cursor:default;"><div class="resource-content"><div class="resource-title"><a href="https://github.com/rasbt/LLMs-from-scratch" target="_blank" style="color:inherit;text-decoration:none;">LLMs-from-scratch — Sebastian Raschka</a></div><div class="resource-meta"><span class="resource-type type-github">github</span>costruisci un GPT da zero capitolo per capitolo, col codice del libro · perfetto accanto a Karpathy · <span class="np-tier tier-deep">🔵 Approfondimento</span></div></div></div>
+      <div class="resource-item" style="cursor:default;"><div class="resource-content"><div class="resource-title"><a href="https://github.com/microsoft/generative-ai-for-beginners" target="_blank" style="color:inherit;text-decoration:none;">Generative AI for Beginners — Microsoft</a></div><div class="resource-meta"><span class="resource-type type-github">github</span>21 lezioni con video e codice, dal prompt engineering alle app · molto adatto per iniziare · <span class="np-tier tier-base">🟢 Base</span></div></div></div>
+      <div class="resource-item" style="cursor:default;"><div class="resource-content"><div class="resource-title"><a href="https://github.com/Hannibal046/Awesome-LLM" target="_blank" style="color:inherit;text-decoration:none;">Awesome-LLM — la lista curata</a></div><div class="resource-meta"><span class="resource-type type-github">github</span>l'elenco vivo di paper, modelli, tool e corsi LLM · quando cerchi "cosa esiste su X", parti qui · <span class="np-tier tier-deep">🔵 Approfondimento</span></div></div></div>
+      <div class="resource-item" style="cursor:default;"><div class="resource-content"><div class="resource-title"><a href="https://github.com/fastai/fastbook" target="_blank" style="color:inherit;text-decoration:none;">fastbook — il libro di fast.ai</a></div><div class="resource-meta"><span class="resource-type type-github">github</span>il libro completo di deep learning come notebook Jupyter gratuiti · si legge eseguendo · <span class="np-tier tier-base">🟢 Base</span></div></div></div>
+    </div>
+    <div class="sub" style="margin-top:1rem; font-size:0.84rem;">💡 Regola: i corsi universitari si <b>affiancano</b> alle missioni, non le sostituiscono. Un video di CS224N dopo aver costruito il tuo mini-GPT vale 10 video guardati a freddo. E i repo si <b>clonano e si eseguono</b>, non si leggono soltanto.</div>
   </div>
 
   <!-- ===== ZONA APPROFONDIMENTI (collassata) ===== -->
@@ -516,6 +524,29 @@
     <div class="np-math-ctrl">
       <button class="np-btn amber" id="math-reveal" onclick="revealMath()">Mostra risposta</button>
       <button class="np-btn" onclick="nextMath()">Prossima sfida →</button>
+    </div>
+  </div>
+
+  <!-- MAPPA DEI CONCETTI MATEMATICI -->
+  <div class="np-card" id="sec-mathmap" style="border:1px solid rgba(245,158,11,0.3); background:linear-gradient(135deg, rgba(245,158,11,0.04), rgba(0,0,0,0));">
+    <h2><span class="em">🧮</span> La mappa dei concetti matematici</h2>
+    <div class="sub">I 12 concetti che muovono l'IA, ognuno spiegato in una riga + dove approfondirlo. I "motori" da usare: <a href="https://www.3blue1brown.com/" target="_blank" style="color:var(--cyan)">3Blue1Brown</a> per <b>vederlo</b>, <a href="https://it.khanacademy.org/math" target="_blank" style="color:var(--cyan)">Khan Academy</a> (anche in italiano) per <b>esercitarti</b>, <a href="https://www.wolframalpha.com/" target="_blank" style="color:var(--cyan)">Wolfram Alpha</a> per i <b>calcoli passo-passo</b>, <a href="https://www.desmos.com/calculator" target="_blank" style="color:var(--cyan)">Desmos</a> per <b>giocare coi grafici</b>, e <a href="https://claude.ai" target="_blank" style="color:var(--cyan)">Claude</a> per <b>spiegazioni su misura</b>.</div>
+    <div class="np-hire">
+      <div class="np-hire-item"><div class="h">➡️ Vettori & embedding</div><div class="p">Liste di numeri che sono "frecce" nello spazio. Per un LLM ogni parola è un vettore: parole simili, frecce vicine. <a href="https://youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab" target="_blank" style="color:var(--cyan)">→ 3B1B cap. 1</a></div></div>
+      <div class="np-hire-item"><div class="h">🔢 Matrici & trasformazioni</div><div class="p">Una matrice trasforma lo spazio (ruota, stira, schiaccia). Ogni layer di una rete neurale è una matrice. <a href="https://www.youtube.com/watch?v=kYB8IZa5AuE" target="_blank" style="color:var(--cyan)">→ 3B1B cap. 3</a></div></div>
+      <div class="np-hire-item"><div class="h">⚡ Prodotto scalare</div><div class="p">Un numero che dice quanto due vettori "si somigliano". È il cuore dell'attention: ogni token lo calcola con tutti gli altri. <a href="https://www.youtube.com/watch?v=LyGKycYT2v0" target="_blank" style="color:var(--cyan)">→ 3B1B dot product</a></div></div>
+      <div class="np-hire-item"><div class="h">📐 Similarità coseno</div><div class="p">L'angolo tra due vettori: piccolo = significati vicini. È così che il RAG trova i documenti giusti. <a href="https://www.pinecone.io/learn/vector-similarity/" target="_blank" style="color:var(--cyan)">→ guida Pinecone</a></div></div>
+      <div class="np-hire-item"><div class="h">📉 Derivata & gradiente</div><div class="p">Quanto cambia l'output se muovi un po' un input. Il gradiente raccoglie tutte le derivate e punta alla salita più ripida. <a href="https://youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr" target="_blank" style="color:var(--cyan)">→ 3B1B Calculus</a></div></div>
+      <div class="np-hire-item"><div class="h">⛓ Chain rule</div><div class="p">La derivata di funzioni composte si moltiplica anello per anello. <b>È letteralmente la backpropagation.</b> <a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-2-new/ab-3-1a/v/chain-rule-introduction" target="_blank" style="color:var(--cyan)">→ Khan chain rule</a></div></div>
+      <div class="np-hire-item"><div class="h">⛰ Gradiente discendente</div><div class="p">Scendi la collina dell'errore a piccoli passi nella direzione opposta al gradiente. Ogni modello impara così. <a href="https://www.youtube.com/watch?v=IHZwWFHWa-w" target="_blank" style="color:var(--cyan)">→ 3B1B gradient descent</a></div></div>
+      <div class="np-hire-item"><div class="h">🎲 Probabilità & distribuzioni</div><div class="p">Un LLM non "sceglie" la parola: assegna una probabilità a <i>tutte</i> e poi campiona. <a href="https://it.khanacademy.org/math/statistics-probability" target="_blank" style="color:var(--cyan)">→ Khan (in italiano)</a></div></div>
+      <div class="np-hire-item"><div class="h">🔁 Teorema di Bayes</div><div class="p">Come aggiornare una credenza quando arriva nuova evidenza. La logica dietro tutto il ragionamento probabilistico. <a href="https://www.youtube.com/watch?v=HZGCoVF3YvM" target="_blank" style="color:var(--cyan)">→ 3B1B Bayes</a></div></div>
+      <div class="np-hire-item"><div class="h">❓ Entropia & cross-entropy</div><div class="p">Quanta "sorpresa" c'è in una distribuzione. La loss con cui si allena ogni LLM è la cross-entropy. <a href="https://colah.github.io/posts/2015-09-Visual-Information/" target="_blank" style="color:var(--cyan)">→ Visual Information Theory (Olah)</a></div></div>
+      <div class="np-hire-item"><div class="h">🌡 Softmax</div><div class="p">Trasforma numeri qualsiasi in probabilità che sommano a 1, esaltando i più grandi. L'ultimo strato di ogni LLM (e la "temperature" agisce qui). <a href="https://en.wikipedia.org/wiki/Softmax_function" target="_blank" style="color:var(--cyan)">→ riferimento</a></div></div>
+      <div class="np-hire-item"><div class="h">🧭 Autovalori & autovettori</div><div class="p">Le direzioni che una trasformazione non ruota, solo allunga. Dietro PCA e l'analisi delle rappresentazioni. <a href="https://www.youtube.com/watch?v=PFDu9oVAE-g" target="_blank" style="color:var(--cyan)">→ 3B1B cap. 14</a></div></div>
+    </div>
+    <div style="background:var(--bg2); border:1px solid rgba(245,158,11,0.25); border-radius:10px; padding:0.9rem 1.2rem; margin-top:1.2rem; font-size:0.85rem; color:var(--text2); line-height:1.6;">
+      <b style="color:#f59e0b;">🤖 Il motore più potente: Claude.</b> Per ogni concetto, prova questo prompt: <i>"Spiegami [concetto] in 3 livelli: come a una bambina, come a una 18enne brava in matematica, e poi mostrami dove appare esattamente dentro un transformer. Alla fine fammi 2 domande per verificare che abbia capito."</i> Funziona meglio di qualsiasi video, perché si adatta a te.
     </div>
   </div>
 
@@ -1903,6 +1934,7 @@ function buildToc() {
   });
   html += '<div class="toc-sep"></div><h4>Approfondimenti</h4>';
   const extra = [
+    { id: 'sec-mathmap', ti: '🧮', name: 'Concetti di matematica' },
     { id: 'sec-finanza', ti: '💹', name: 'Finanza, AI & Quant' },
     { id: 'sec-olimpiadi', ti: '🏅', name: 'Olimpiadi di Matematica' },
     { id: 'sec-mamba', ti: '🐍', name: 'Costruisci un Mamba' },
