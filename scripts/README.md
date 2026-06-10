@@ -36,7 +36,15 @@ python scripts/update_news.py --push
 Ogni aggiornamento fa una manciata di chiamate API con web search — pochi centesimi.
 Puoi lanciarlo quando vuoi (es. una volta a settimana).
 
-## Automatizzarlo (opzionale, avanzato)
+## Automatizzarlo ogni mattina (opzionale)
 
-Su Windows puoi usare l'**Utilità di pianificazione** per lanciare
-`python scripts/update_news.py --push` ogni settimana automaticamente.
+Su Windows, un solo comando in PowerShell crea l'attività pianificata
+(news fresche e spiegate ogni mattina alle 8, pubblicate da sole):
+
+```powershell
+schtasks /create /tn "LLM Atlas News" /sc daily /st 08:00 `
+  /tr "python C:\Users\Felice\Downloads\llm-atlas-pro\scripts\update_news.py --push"
+```
+
+Per rimuoverla: `schtasks /delete /tn "LLM Atlas News" /f`
+(Il PC deve essere acceso a quell'ora; ogni run costa pochi centesimi di API.)

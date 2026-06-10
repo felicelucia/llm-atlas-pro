@@ -255,7 +255,7 @@
   </div>
   <h1>Costruisci qualcosa di reale oggi.<br>Capisci come funziona domani.<br><em>Il percorso per diventare elite nell'IA, divertendoti.</em></h1>
   <p>Non una lista infinita che spaventa, ma un percorso a missioni: costruisci prima, poi capisci. Base + opzionale, un progetto che cresce con te, paper veri letti uno alla volta, snack di matematica e la mentalità che ti rende qualcuno che i lab vogliono. Aggiornato a giugno 2026, con lo sguardo al 2028.</p>
-  <a href="#sec-missioni" style="display:inline-flex; align-items:center; gap:10px; background:linear-gradient(135deg,#3dd9ff,#1ec3f0); color:#04141c; font-weight:800; font-size:1rem; padding:14px 28px; border-radius:14px; text-decoration:none; box-shadow:0 8px 28px rgba(45,212,255,0.35); transition:transform .15s;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform=''">▶ Inizia da qui — le 8 missioni</a>
+  <a href="#sec-start" style="display:inline-flex; align-items:center; gap:10px; background:linear-gradient(135deg,#4ade80,#22c55e); color:#04140a; font-weight:800; font-size:1rem; padding:14px 28px; border-radius:14px; text-decoration:none; box-shadow:0 8px 28px rgba(74,222,128,0.35); transition:transform .15s;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform=''">🌱 Inizia da qui — si parte da zero</a>
 </div>
 
 <div class="stats">
@@ -419,6 +419,22 @@
     </div>
   </div>
 
+  <!-- PARTI DA ZERO — LA RAMPA DOLCE -->
+  <div class="np-card" id="sec-start" style="border:1px solid rgba(74,222,128,0.45); background:linear-gradient(135deg, rgba(74,222,128,0.08), rgba(45,212,255,0.04));">
+    <h2><span class="em">🌱</span> Parti da zero — la rampa dolce <span id="start-count" style="font-size:0.95rem; color:#4ade80; background:var(--bg3); border-radius:14px; padding:3px 14px; margin-left:8px;">0/8</span></h2>
+    <div class="sub">Se questo sito ti sembra difficile, è normale: è roba vera, e <b>nessuno parte sapendola</b>. Questa rampa è fatta di passi da 20-30 minuti, uno al giorno se vuoi. Niente da installare, niente prerequisiti. Quando li hai spuntati tutti, sei pronta per la Missione 1 — e il resto del sito smette di fare paura. <b>Regola d'oro: segui solo i 🟢, ignora tutto il resto. Il sito non scappa.</b></div>
+    <div style="display:flex; flex-direction:column; gap:8px;">
+      <div class="resource-item" id="sitem-0" style="padding:11px 14px;"><div class="resource-check" id="scheck-0" onclick="toggleStart(0)"></div><div class="resource-content"><div class="resource-title">1. Guarda cosa stai per imparare <span style="color:var(--text2); font-weight:400;">(8 min)</span></div><div class="resource-meta"><a href="https://www.youtube.com/watch?v=LPZh9BOjkQs" target="_blank" style="color:var(--cyan)">"Large Language Models explained briefly" — 3Blue1Brown</a> · attiva i sottotitoli in italiano · il video più chiaro che esista su cosa sia un LLM.</div></div></div>
+      <div class="resource-item" id="sitem-1" style="padding:11px 14px;"><div class="resource-check" id="scheck-1" onclick="toggleStart(1)"></div><div class="resource-content"><div class="resource-title">2. Fatti spiegare l'IA... dall'IA <span style="color:var(--text2); font-weight:400;">(15 min)</span></div><div class="resource-meta">Un click e Claude si presenta: <button class="np-btn" style="padding:4px 12px; font-size:0.78rem;" onclick="openClaudeQ('Ciao! Ho 18 anni e voglio capire come funzioni davvero. Spiegami cos\'è un large language model come te, con un esempio divertente, senza darmi nulla per scontato. Poi fammi 3 domande facili per vedere se ho capito.')">Apri in Claude →</button> Fai tutte le domande che vuoi: non si stanca mai.</div></div></div>
+      <div class="resource-item" id="sitem-2" style="padding:11px 14px;"><div class="resource-check" id="scheck-2" onclick="toggleStart(2)"></div><div class="resource-content"><div class="resource-title">3. Il tuo primo codice — qui, senza installare nulla <span style="color:var(--text2); font-weight:400;">(20 min)</span></div><div class="resource-meta">Scorri al <a href="#block-prog" style="color:var(--cyan)">blocco Programmazione</a>, premi "🧪 Apri Lab Interattivo" → tab "Esercizio Python" → ▶ Esegui. Hai appena fatto girare Python nel browser. Prova a cambiare un numero e ri-esegui.</div></div></div>
+      <div class="resource-item" id="sitem-3" style="padding:11px 14px;"><div class="resource-check" id="scheck-3" onclick="toggleStart(3)"></div><div class="resource-content"><div class="resource-title">4. Python giocando <span style="color:var(--text2); font-weight:400;">(30 min, ripetibile)</span></div><div class="resource-meta"><a href="https://hedy.org/" target="_blank" style="color:var(--cyan)">Hedy</a> (in italiano, fatto apposta per iniziare gradualmente) oppure <a href="https://www.kaggle.com/learn/python" target="_blank" style="color:var(--cyan)">Kaggle Learn Python</a> — prime 2 lezioni. Quando ti blocchi: incolla l'errore a Claude e chiedi "perché?".</div></div></div>
+      <div class="resource-item" id="sitem-4" style="padding:11px 14px;"><div class="resource-check" id="scheck-4" onclick="toggleStart(4)"></div><div class="resource-content"><div class="resource-title">5. Il primo "wow" — costruisci senza saper programmare <span style="color:var(--text2); font-weight:400;">(30 min)</span></div><div class="resource-meta">Chiedi a Claude di costruirti qualcosa e modificalo chattando: <button class="np-btn" style="padding:4px 12px; font-size:0.78rem;" onclick="openClaudeQ('Costruiscimi una piccola pagina web interattiva: un quiz divertente sui gusti musicali, con punteggio finale. Poi modifichiamola insieme passo passo: io ti dico cosa cambiare e tu lo fai, spiegandomi ogni volta in una frase cosa hai toccato.')">Apri in Claude →</button> Vedere nascere qualcosa di tuo è il momento in cui scatta tutto.</div></div></div>
+      <div class="resource-item" id="sitem-5" style="padding:11px 14px;"><div class="resource-check" id="scheck-5" onclick="toggleStart(5)"></div><div class="resource-content"><div class="resource-title">6. Uno snack di matematica <span style="color:var(--text2); font-weight:400;">(5 min al giorno)</span></div><div class="resource-meta">Apri <a href="javascript:void(0)" onclick="tocGo('sec-mathmap')" style="color:var(--cyan)">la mappa dei concetti</a> e prova il prompt-tutor su UN concetto (parti dai vettori). Un concetto al giorno: in due settimane la matematica fa molta meno paura.</div></div></div>
+      <div class="resource-item" id="sitem-6" style="padding:11px 14px;"><div class="resource-check" id="scheck-6" onclick="toggleStart(6)"></div><div class="resource-content"><div class="resource-title">7. Il quaderno dei perché <span style="color:var(--text2); font-weight:400;">(2 min al giorno)</span></div><div class="resource-meta">Apri un quaderno (o un file). Ogni giorno scrivi: 1 cosa che hai capito, 1 domanda che ti è rimasta. Ogni domanda → al prompt-tutor. È l'abitudine che distingue chi arriva in alto.</div></div></div>
+      <div class="resource-item" id="sitem-7" style="padding:11px 14px;"><div class="resource-check" id="scheck-7" onclick="toggleStart(7)"></div><div class="resource-content"><div class="resource-title">8. Pronta per la Missione 1 🚀</div><div class="resource-meta">Quando i 7 passi sopra sono ✓, fai la <a href="#sec-missione" style="color:var(--cyan)">Missione Giorno 1</a> con Claude accanto che ti guida passo passo. Da lì in poi, il percorso sale con te: 🟢 prima, 🔵 quando sei curiosa, 🟣 quando vuoi volare.</div></div></div>
+    </div>
+  </div>
+
   <!-- LE 8 MISSIONI -->
   <div class="np-card" id="sec-missioni" style="border:1px solid rgba(45,212,255,0.4); background:linear-gradient(135deg, rgba(45,212,255,0.07), rgba(74,222,128,0.04));">
     <h2><span class="em">🎯</span> Le 8 missioni <span id="missions-count" style="font-size:0.95rem; color:var(--cyan); background:var(--bg3); border-radius:14px; padding:3px 14px; margin-left:8px;">0/8</span></h2>
@@ -546,7 +562,27 @@
       <div class="np-hire-item"><div class="h">🧭 Autovalori & autovettori</div><div class="p">Le direzioni che una trasformazione non ruota, solo allunga. Dietro PCA e l'analisi delle rappresentazioni. <a href="https://www.youtube.com/watch?v=PFDu9oVAE-g" target="_blank" style="color:var(--cyan)">→ 3B1B cap. 14</a></div></div>
     </div>
     <div style="background:var(--bg2); border:1px solid rgba(245,158,11,0.25); border-radius:10px; padding:0.9rem 1.2rem; margin-top:1.2rem; font-size:0.85rem; color:var(--text2); line-height:1.6;">
-      <b style="color:#f59e0b;">🤖 Il motore più potente: Claude.</b> Per ogni concetto, prova questo prompt: <i>"Spiegami [concetto] in 3 livelli: come a una bambina, come a una 18enne brava in matematica, e poi mostrami dove appare esattamente dentro un transformer. Alla fine fammi 2 domande per verificare che abbia capito."</i> Funziona meglio di qualsiasi video, perché si adatta a te.
+      <b style="color:#f59e0b;">🤖 Il prompt-tutor — su qualsiasi LLM.</b> Scegli un concetto e aprilo con un click nel tuo assistente preferito: il prompt (3 livelli + dove appare nel transformer + 2 domande di verifica) si compone da solo.
+      <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:12px; align-items:center;">
+        <select id="tutor-concept" style="background:var(--bg3); color:var(--text); border:1px solid var(--border); border-radius:9px; padding:8px 12px; font-size:0.85rem; font-family:inherit; max-width:100%;">
+          <option value="i vettori e gli embedding">Vettori & embedding</option>
+          <option value="le matrici e le trasformazioni lineari">Matrici & trasformazioni</option>
+          <option value="il prodotto scalare">Prodotto scalare</option>
+          <option value="la similarità coseno">Similarità coseno</option>
+          <option value="la derivata e il gradiente">Derivata & gradiente</option>
+          <option value="la chain rule (derivata di funzioni composte)">Chain rule</option>
+          <option value="il gradiente discendente">Gradiente discendente</option>
+          <option value="le probabilità e le distribuzioni">Probabilità & distribuzioni</option>
+          <option value="il teorema di Bayes">Teorema di Bayes</option>
+          <option value="l'entropia e la cross-entropy">Entropia & cross-entropy</option>
+          <option value="la funzione softmax">Softmax</option>
+          <option value="autovalori e autovettori">Autovalori & autovettori</option>
+        </select>
+        <button class="np-btn amber" onclick="openTutor('claude')">Apri in Claude</button>
+        <button class="np-btn" onclick="openTutor('chatgpt')">ChatGPT</button>
+        <button class="np-btn" onclick="openTutor('perplexity')">Perplexity</button>
+        <button class="np-btn" onclick="copyTutor(this)">📋 Copia (Gemini & altri)</button>
+      </div>
     </div>
   </div>
 
@@ -867,8 +903,24 @@ __global__ void add(float* a, float* b, float* c) {
 
   <!-- NOVITÀ (aggiornabile via script) -->
   <div class="np-card" id="sec-novita" style="border:1px solid rgba(0,212,255,0.3);">
-    <h2><span class="em">📰</span> Novità dal mondo dell'IA</h2>
-    <div class="sub">Questa sezione si aggiorna con uno script che usa la tua API key Claude (in locale, mai esposta). Vedi <code>scripts/README.md</code> nel repo.</div>
+    <h2><span class="em">📰</span> Novità dal mondo dell'IA — spiegate</h2>
+    <div class="sub">Tre modi per avere ogni giorno le news che contano, <b>spiegate</b> e non solo elencate.</div>
+
+    <div class="np-hire" style="margin-bottom:1.3rem;">
+      <div class="np-hire-item"><div class="h">📬 Newsletter quotidiane (5 min)</div><div class="p"><a href="https://tldr.tech/ai" target="_blank" style="color:var(--cyan)">TLDR AI</a> e <a href="https://alphasignal.ai" target="_blank" style="color:var(--cyan)">AlphaSignal</a> ogni mattina (la seconda più tecnica), <a href="https://www.therundown.ai/" target="_blank" style="color:var(--cyan)">The Rundown</a> per il quadro generale. Ti arrivano via email: zero sforzo.</div></div>
+      <div class="np-hire-item"><div class="h">🤖 Lo script di questo sito</div><div class="p"><code>python scripts/update_news.py</code> usa Claude + web search per scrivere qui sotto le 5 novità del momento, spiegate in italiano. Si può <b>automatizzare ogni mattina</b> con l'Utilità di pianificazione — vedi <code>scripts/README.md</code>.</div></div>
+      <div class="np-hire-item"><div class="h">🔎 Il Decoder — per i post che incontri</div><div class="p">Leggi un post o un paper su LinkedIn/X e vuoi capirlo davvero? Usa il prompt qui sotto: tesi in una frase, perché conta, cosa cambia per te, e dove potrebbe esagerare.</div></div>
+    </div>
+
+    <div style="background:var(--bg2); border:1px solid rgba(0,212,255,0.25); border-radius:10px; padding:0.9rem 1.2rem; margin-bottom:1.3rem; font-size:0.85rem; color:var(--text2); line-height:1.6;">
+      <b style="color:var(--cyan);">🔎 Il Decoder</b> — apri il tuo LLM e incolla il post/articolo in coda al prompt:
+      <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:10px;">
+        <button class="np-btn" style="background:var(--cyan); color:#04141c; border-color:var(--cyan); font-weight:700;" onclick="openDecoder('claude')">Apri in Claude</button>
+        <button class="np-btn" onclick="openDecoder('chatgpt')">ChatGPT</button>
+        <button class="np-btn" onclick="openDecoder('perplexity')">Perplexity</button>
+        <button class="np-btn" onclick="copyDecoder(this)">📋 Copia il prompt</button>
+      </div>
+    </div>
     <!-- NEWS:START -->
     <div style="font-size:0.88rem; color:var(--text2); line-height:1.7;">
       <p>Nessun aggiornamento ancora. Lancia <code>python scripts/update_news.py</code> per popolare questa sezione con le ultime novità.</p>
@@ -1921,6 +1973,7 @@ function buildToc() {
   const panel = document.getElementById('tocPanel');
   let html = '<h4>Fai — missioni & progetti</h4>';
   const strat = [
+    { id: 'sec-start', ti: '🌱', name: 'Parti da zero' },
     { id: 'sec-missioni', ti: '🎯', name: 'Le 8 missioni' },
     { id: 'sec-missione', ti: '🚀', name: 'Missione Giorno 1' },
     { id: 'sec-salto', ti: '⭐', name: 'Il Salto (capstone)' },
@@ -2005,6 +2058,54 @@ function toggleMission(i) {
   renderMissions();
 }
 renderMissions();
+
+// ===================== RAMPA "PARTI DA ZERO" =====================
+function openClaudeQ(p) { window.open('https://claude.ai/new?q=' + encodeURIComponent(p), '_blank'); }
+function refreshStart() {
+  let n = 0;
+  for (let i = 0; i < 8; i++) {
+    const done = localStorage.getItem('llm_start_' + i) === '1';
+    if (done) n++;
+    const chk = document.getElementById('scheck-' + i);
+    const item = document.getElementById('sitem-' + i);
+    if (chk) { chk.classList.toggle('done', done); chk.textContent = done ? '✓' : ''; }
+    if (item) item.classList.toggle('completed', done);
+  }
+  const c = document.getElementById('start-count');
+  if (c) { c.textContent = n + '/8'; if (n === 8) c.textContent = '8/8 🎉'; }
+}
+function toggleStart(i) {
+  const k = 'llm_start_' + i;
+  localStorage.setItem(k, localStorage.getItem(k) === '1' ? '0' : '1');
+  refreshStart();
+}
+refreshStart();
+
+// ===================== PROMPT-TUTOR & DECODER (multi-LLM) =====================
+function tutorPrompt() {
+  const sel = document.getElementById('tutor-concept');
+  const c = sel ? sel.value : 'il gradiente discendente';
+  return `Spiegami ${c} in 3 livelli: prima come a una bambina, poi come a una 18enne brava in matematica, e infine mostrami dove appare esattamente dentro un transformer, con un mini esempio numerico. Alla fine fammi 2 domande per verificare che abbia capito, aspetta le mie risposte e correggile.`;
+}
+function decoderPrompt() {
+  return `Ti incollo un post o un articolo sul mondo dell'IA. Spiegamelo così:\n1) La tesi in una frase semplice.\n2) Perché conta davvero, e per chi.\n3) Cosa cambia concretamente per una studentessa che vuole diventare elite nell'IA.\n4) Cosa NON dice, o dove potrebbe esagerare (sii critico).\n5) Vale la pena leggere la fonte originale? Sì/no e perché.\n\nEcco il testo:\n[INCOLLA QUI]`;
+}
+const LLM_URLS = {
+  claude: q => 'https://claude.ai/new?q=' + q,
+  chatgpt: q => 'https://chatgpt.com/?q=' + q,
+  perplexity: q => 'https://www.perplexity.ai/search?q=' + q,
+};
+function openTutor(engine) { window.open(LLM_URLS[engine](encodeURIComponent(tutorPrompt())), '_blank'); }
+function openDecoder(engine) { window.open(LLM_URLS[engine](encodeURIComponent(decoderPrompt())), '_blank'); }
+function copyWithFeedback(btn, text, label) {
+  navigator.clipboard.writeText(text).then(() => {
+    const old = btn.textContent;
+    btn.textContent = '✓ Copiato!';
+    setTimeout(() => { btn.textContent = old; }, 1600);
+  });
+}
+function copyTutor(btn) { copyWithFeedback(btn, tutorPrompt()); }
+function copyDecoder(btn) { copyWithFeedback(btn, decoderPrompt()); }
 
 // ===================== ZONA APPROFONDIMENTI =====================
 function setApprof(open) {
