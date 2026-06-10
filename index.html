@@ -255,6 +255,7 @@
   </div>
   <h1>Costruisci qualcosa di reale oggi.<br>Capisci come funziona domani.<br><em>Il percorso per diventare elite nell'IA, divertendoti.</em></h1>
   <p>Non una lista infinita che spaventa, ma un percorso a missioni: costruisci prima, poi capisci. Base + opzionale, un progetto che cresce con te, paper veri letti uno alla volta, snack di matematica e la mentalità che ti rende qualcuno che i lab vogliono. Aggiornato a giugno 2026, con lo sguardo al 2028.</p>
+  <a href="#sec-missioni" style="display:inline-flex; align-items:center; gap:10px; background:linear-gradient(135deg,#3dd9ff,#1ec3f0); color:#04141c; font-weight:800; font-size:1rem; padding:14px 28px; border-radius:14px; text-decoration:none; box-shadow:0 8px 28px rgba(45,212,255,0.35); transition:transform .15s;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform=''">▶ Inizia da qui — le 8 missioni</a>
 </div>
 
 <div class="stats">
@@ -303,25 +304,25 @@
       <div class="po-ico">⚡</div>
       <div class="po-title">Atlante completo</div>
       <div class="po-desc">Tutti i 13 blocchi, dalla matematica al quantum. Per esplorare l'intero campo.</div>
-      <div class="po-hours">~919h · tutto</div>
+      <div class="po-hours">tutti i 13 blocchi</div>
     </div>
     <div class="path-opt" data-path="job" onclick="setPath('job')">
       <div class="po-ico">🎯</div>
       <div class="po-title">Voglio un lavoro</div>
       <div class="po-desc">Programmazione, fondamenta, applicazioni, produzione e portfolio GitHub. Il percorso più diretto all'assunzione.</div>
-      <div class="po-hours">~500h · 6 blocchi</div>
+      <div class="po-hours">6 blocchi</div>
     </div>
     <div class="path-opt" data-path="research" onclick="setPath('research')">
       <div class="po-ico">🔬</div>
       <div class="po-title">Voglio la ricerca</div>
       <div class="po-desc">Matematica, fondamenta, architetture, paper avanzati e safety. Per chi punta a lab e PhD.</div>
-      <div class="po-hours">~345h · 5 blocchi</div>
+      <div class="po-hours">5 blocchi</div>
     </div>
     <div class="path-opt" data-path="fast" onclick="setPath('fast')">
       <div class="po-ico">🚀</div>
       <div class="po-title">Ho poco tempo</div>
       <div class="po-desc">L'essenziale per costruire ed essere operativa: Python, Karpathy, applicazioni e produzione.</div>
-      <div class="po-hours">~480h · 4 blocchi</div>
+      <div class="po-hours">4 blocchi</div>
     </div>
   </div>
   <div class="path-hint" id="path-hint">Stai vedendo tutti i blocchi. Scegli un percorso per mettere a fuoco ciò che serve a te — gli altri restano visibili ma in secondo piano.</div>
@@ -418,6 +419,13 @@
     </div>
   </div>
 
+  <!-- LE 8 MISSIONI -->
+  <div class="np-card" id="sec-missioni" style="border:1px solid rgba(45,212,255,0.4); background:linear-gradient(135deg, rgba(45,212,255,0.07), rgba(74,222,128,0.04));">
+    <h2><span class="em">🎯</span> Le 8 missioni <span id="missions-count" style="font-size:0.95rem; color:var(--cyan); background:var(--bg3); border-radius:14px; padding:3px 14px; margin-left:8px;">0/8</span></h2>
+    <div class="sub">Il percorso vero è questo: <b>8 cose costruite e funzionanti</b>, dalla prima app al capstone. Le risorse dei blocchi sono il carburante; le missioni sono il viaggio. Spunta una missione solo quando è davvero completa e funzionante.</div>
+    <div id="missions-list" style="display:flex; flex-direction:column; gap:8px;"></div>
+  </div>
+
   <!-- MISSIONE GIORNO 1 -->
   <div class="np-card np-mission" id="sec-missione">
     <span class="badge">⚡ MISSIONE GIORNO 1</span>
@@ -445,6 +453,40 @@
       <div class="np-flow-item"><div class="np-flow-rail"><div class="np-flow-node">★</div></div><div class="np-flow-body"><div class="ph">Blocco 12 · Carriera</div><div class="ti">🏆 Diventa il tuo biglietto da visita</div><div class="de">README curato, blog post che spiega come l'hai costruito, demo online. Questo progetto <b>è</b> il tuo CV.</div><div class="blk">→ Output: la cosa che fa dire "voglio questa persona nel team"</div></div></div>
     </div>
   </div>
+
+  <!-- LINUX, SERVER & SICUREZZA PRATICA -->
+  <div class="np-card" id="sec-linux" style="border:1px solid rgba(252,211,77,0.3); background:linear-gradient(135deg, rgba(252,211,77,0.05), rgba(0,0,0,0));">
+    <h2><span class="em">🐧</span> Linux, server & sicurezza pratica</h2>
+    <div class="sub">Ogni modello del mondo gira su un server Linux. Saper usare il terminale, gestire un server tuo e ragionare da difensore è il <b>fondamento invisibile</b> di ogni ingegnere elite — e si impara giocando.</div>
+    <div class="np-steps">
+      <div class="np-step"><div class="n" style="background:#fcd34d; color:#1a1300;">1</div><div class="body"><b>Il terminale come casa</b> — shell, file, pipe, permessi con <a href="https://linuxjourney.com/" target="_blank">Linux Journey</a> e <a href="https://missing.csail.mit.edu/" target="_blank">MIT Missing Semester</a>. <span class="np-tier tier-base">🟢 Base</span></div></div>
+      <div class="np-step"><div class="n" style="background:#fcd34d; color:#1a1300;">2</div><div class="body"><b>Gioca a Bandit</b> — <a href="https://overthewire.org/wargames/bandit/" target="_blank">OverTheWire Bandit</a>: un wargame dove impari shell e sicurezza risolvendo livelli. Il modo più divertente che esista. <span class="np-tier tier-base">🟢 Base</span></div></div>
+      <div class="np-step"><div class="n" style="background:#60a5fa;">3</div><div class="body"><b>Un server tuo</b> — WSL sul tuo PC o un piccolo VPS: SSH con chiavi (mai password), firewall, e deployaci la tua app della Missione 1. <span class="np-tier tier-deep">🔵 Approfondimento</span></div></div>
+      <div class="np-step"><div class="n" style="background:#c084fc;">4</div><div class="body"><b>Docker</b> — impacchetta la tua app in un container con il <a href="https://docs.docker.com/get-started/" target="_blank">tutorial ufficiale</a>: è come gira il software in produzione, ovunque. <span class="np-tier tier-elite">🟣 Elite</span></div></div>
+    </div>
+  </div>
+
+  <!-- CASSETTA DEGLI ATTREZZI IA -->
+  <div class="np-card" id="sec-toolbox" style="border:1px solid rgba(45,212,255,0.3);">
+    <h2><span class="em">🤖</span> Studia e resta aggiornata <i>con</i> l'IA</h2>
+    <div class="sub">Il modo più veloce di imparare l'IA è <b>usarla come tutor e come collega</b>. Questi sono gli strumenti del mestiere — usali ogni giorno.</div>
+    <div class="np-hire">
+      <div class="np-hire-item"><div class="h">🎓 Claude come tutor</div><div class="p">Crea un Progetto su <a href="https://claude.ai" target="_blank" style="color:var(--cyan)">claude.ai</a> dedicato al percorso: incolla un paper e chiedi "spiegamelo come a una 18enne", fatti fare quiz, fatti correggere il codice. Il tutor perfetto, sempre disponibile.</div></div>
+      <div class="np-hire-item"><div class="h">⌨ Claude Code per costruire</div><div class="p"><a href="https://claude.ai/code" target="_blank" style="color:var(--cyan)">Claude Code</a> è un agente nel terminale che costruisce con te: le missioni vanno il doppio più veloci. Ma la regola è <b>capire ogni riga</b> che accetti — sennò non stai imparando.</div></div>
+      <div class="np-hire-item"><div class="h">📚 NotebookLM per i paper</div><div class="p"><a href="https://notebooklm.google.com" target="_blank" style="color:var(--cyan)">NotebookLM</a>: carichi i PDF dei paper e ti genera riassunti, mappe e persino un podcast. Ottimo per il "un paper a settimana".</div></div>
+      <div class="np-hire-item"><div class="h">🔍 Ricerca con fonti</div><div class="p"><a href="https://perplexity.ai" target="_blank" style="color:var(--cyan)">Perplexity</a> per domande con fonti citate; la sezione <b>📰 Novità</b> di questo sito si aggiorna con lo script <code>scripts/update_news.py</code> (Claude API + web search, in locale).</div></div>
+    </div>
+  </div>
+
+  <!-- ===== ZONA APPROFONDIMENTI (collassata) ===== -->
+  <div class="np-card" style="border:1px solid var(--border);">
+    <div class="np-collapse-head" onclick="toggleApprof()">
+      <h2 style="margin:0"><span class="em">📚</span> Approfondimenti — quando vuoi di più <span class="np-tier tier-deep" style="margin-left:6px">🔵 Facoltativo</span></h2>
+      <span class="tog" id="approf-tog">▾</span>
+    </div>
+    <div class="sub" style="margin:0.5rem 0 0;">Snack di matematica, etica, progetti alternativi (finanza, olimpiadi), Mamba, progetti virali, il playbook di Jensen Huang e le novità. Tutto ottimo — ma prima vengono le missioni.</div>
+  </div>
+  <div class="approf-zone" style="display:none;">
 
   <!-- SNACK MATEMATICA -->
   <div class="np-card np-math">
@@ -544,7 +586,7 @@ __global__ void add(float* a, float* b, float* c) {
     <!-- RISORSE BIO-AI -->
     <div style="font-weight:700; font-size:1.02rem; margin:1.4rem 0 0.6rem;">📚 Risorse di AI per la biologia (verificate)</div>
     <div style="display:flex; flex-direction:column; gap:7px;">
-      <div class="resource-item" style="cursor:default;"><div class="resource-content"><div class="resource-title"><a href="https://www.anthropic.com/news/a-new-initiative-for-developing-safe-ai" target="_blank" style="color:inherit;text-decoration:none;">Machines of Loving Grace — Dario Amodei</a></div><div class="resource-meta"><span class="resource-type type-article">essay</span>darioamodei.com · la visione di Amodei su AI + biologia · LETTURA OBBLIGATA · <span class="np-tier tier-base">🟢 Base</span></div></div></div>
+      <div class="resource-item" style="cursor:default;"><div class="resource-content"><div class="resource-title"><a href="https://darioamodei.com/machines-of-loving-grace" target="_blank" style="color:inherit;text-decoration:none;">Machines of Loving Grace — Dario Amodei</a></div><div class="resource-meta"><span class="resource-type type-article">essay</span>darioamodei.com · la visione di Amodei su AI + biologia · LETTURA OBBLIGATA · <span class="np-tier tier-base">🟢 Base</span></div></div></div>
       <div class="resource-item" style="cursor:default;"><div class="resource-content"><div class="resource-title"><a href="https://github.com/google-deepmind/alphafold" target="_blank" style="color:inherit;text-decoration:none;">AlphaFold — DeepMind</a></div><div class="resource-meta"><span class="resource-type type-github">github</span>predizione struttura proteine · Nobel per la Chimica 2024 · il progetto AI-bio più importante di sempre · <span class="np-tier tier-deep">🔵 Approfondimento</span></div></div></div>
       <div class="resource-item" style="cursor:default;"><div class="resource-content"><div class="resource-title"><a href="https://github.com/facebookresearch/esm" target="_blank" style="color:inherit;text-decoration:none;">ESM / ESMFold — Meta AI</a></div><div class="resource-meta"><span class="resource-type type-github">github</span>protein language models · "GPT per le proteine" · usabile da subito su Hugging Face · <span class="np-tier tier-deep">🔵 Approfondimento</span></div></div></div>
       <div class="resource-item" style="cursor:default;"><div class="resource-content"><div class="resource-title"><a href="https://huggingface.co/microsoft/biogpt" target="_blank" style="color:inherit;text-decoration:none;">BioGPT & PubMedBERT — Microsoft</a></div><div class="resource-meta"><span class="resource-type type-tool">tool</span>huggingface.co · modelli pre-addestrati su letteratura biomedica · perfetti per BioBridge · <span class="np-tier tier-base">🟢 Base</span></div></div></div>
@@ -650,6 +692,8 @@ __global__ void add(float* a, float* b, float* c) {
     </div>
   </div>
 
+  </div><!-- /approf-zone A -->
+
   <!-- IL SALTO — CAPSTONE -->
   <div class="np-card" id="sec-salto" style="border:1px solid rgba(45,212,255,0.4); background:linear-gradient(135deg, rgba(45,212,255,0.08), rgba(168,85,247,0.07));">
     <h2><span class="em">🚀</span> Il Salto — fai qualcosa di <i>nuovo</i></h2>
@@ -691,6 +735,8 @@ __global__ void add(float* a, float* b, float* c) {
 
     <div class="sub" style="margin-top:1.2rem; font-size:0.85rem;">🏆 <b>Dove ti porta:</b> un capstone del genere, ben spiegato su GitHub + un blog post, è ciò che fa dire a un professore del MIT o a un recruiter di Anthropic <i>"questa persona non ha solo studiato — ha capito e ha costruito."</i> È il salto.</div>
   </div>
+
+  <div class="approf-zone" style="display:none;">
 
   <!-- COSTRUISCI UN MAMBA -->
   <div class="np-card" id="sec-mamba" style="border:1px solid rgba(249,115,22,0.35); background:linear-gradient(135deg, rgba(249,115,22,0.07), rgba(45,212,255,0.03));">
@@ -777,6 +823,8 @@ __global__ void add(float* a, float* b, float* c) {
     </div>
     <!-- NEWS:END -->
   </div>
+
+  </div><!-- /approf-zone B -->
 
 </div>
 
@@ -1293,7 +1341,7 @@ const DATA = [
           { title: 'Chinchilla: Training Compute-Optimal LLMs', type: 'paper', meta: 'Hoffmann et al. · DeepMind · 2022 · scaling laws riviste · arXiv:2203.15556', url: 'https://arxiv.org/abs/2203.15556' },
           { title: 'Long-Range Language Modeling via Gated State Spaces', type: 'paper', meta: 'architetture oltre il Transformer che emergono 2025-2026', url: 'https://arxiv.org/abs/2206.13947' },
           { title: 'Sam Altman: "Intelligence too cheap to meter" — blog (2025)', type: 'article', meta: 'openai.com · visione del futuro AI · leggerlo criticamente', url: 'https://openai.com/index/intelligence-age/' },
-          { title: 'Demis Hassabis — Gemini and the path to AGI (2024)', type: 'video', meta: 'Lex Fridman podcast #AlphaFold3 · intervista DeepMind CEO · 3h', url: 'https://lexfridman.com/demis-hassabis-3/' },
+          { title: 'Demis Hassabis — Gemini and the path to AGI (2024)', type: 'video', meta: 'Lex Fridman podcast #AlphaFold3 · intervista DeepMind CEO · 3h', url: 'https://lexfridman.com/podcast/' },
         ]
       },
     ]
@@ -1355,16 +1403,16 @@ const DATA = [
           { title: 'EU AI Act Explained — Future of Life Institute', type: 'article', meta: 'futureoflife.org · guida comprensibile ai non-giuristi · risk tiers spiegati', url: 'https://futureoflife.org/ai/the-eu-ai-act/' },
           { title: 'AI Act Implementation Timeline — April 2025', type: 'article', meta: 'digital-strategy.ec.europa.eu · roadmap completa applicazione 2024-2027', url: 'https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai' },
           { title: 'GPAI Code of Practice — modelli foundation', type: 'article', meta: 'ec.europa.eu · regole specifiche per modelli general-purpose come GPT/Claude', url: 'https://digital-strategy.ec.europa.eu/en/policies/ai-act-general-purpose-ai' },
-          { title: 'AI Act Risk Categories Explainer — Ada Lovelace Institute', type: 'article', meta: 'adalovelaceinstitute.org · risk tiers: unacceptable, high, limited, minimal', url: 'https://www.adalovelaceinstitute.org/resource/the-eu-ai-act/' },
+          { title: 'AI Act Risk Categories Explainer — Ada Lovelace Institute', type: 'article', meta: 'adalovelaceinstitute.org · risk tiers: unacceptable, high, limited, minimal', url: 'https://artificialintelligenceact.eu/' },
         ]
       },
       {
         name: 'Governance AI globale',
         sub: 'US, Cina, UK e scenari 2028 · ~13h',
         resources: [
-          { title: 'Executive Order on AI Safety — Biden 2023 / Trump policy 2025', type: 'article', meta: 'whitehouse.gov · AI governance USA · evoluzione tra le due amministrazioni', url: 'https://www.whitehouse.gov/briefing-room/presidential-actions/2023/10/30/executive-order-on-the-safe-secure-and-trustworthy-development-and-use-of-artificial-intelligence/' },
+          { title: 'Executive Order on AI Safety — Biden 2023 / Trump policy 2025', type: 'article', meta: 'whitehouse.gov · AI governance USA · evoluzione tra le due amministrazioni', url: 'https://www.federalregister.gov/documents/2023/11/01/2023-24283/safe-secure-and-trustworthy-development-and-use-of-artificial-intelligence' },
           { title: 'UK AI Safety Institute — Bletchley Declaration', type: 'article', meta: 'aisi.gov.uk · UK come hub globale safety AI · valutazioni modelli frontier', url: 'https://www.gov.uk/government/publications/ai-safety-summit-2023-the-bletchley-declaration' },
-          { title: 'China AI Governance Framework 2023-2025', type: 'article', meta: 'cac.gov.cn · generative AI regulation cinese · confronto con EU AI Act', url: 'https://digichina.stanford.edu/work/chinas-ai-regulations-and-how-they-get-made/' },
+          { title: 'China AI Governance Framework 2023-2025', type: 'article', meta: 'cac.gov.cn · generative AI regulation cinese · confronto con EU AI Act', url: 'https://digichina.stanford.edu/' },
           { title: 'Governing AI: A Blueprint for the Future — Microsoft', type: 'article', meta: 'blogs.microsoft.com · framework pratico per aziende · compliance AI Act', url: 'https://blogs.microsoft.com/on-the-issues/2023/05/25/governing-ai-a-blueprint-for-the-future/' },
         ]
       },
@@ -1700,23 +1748,31 @@ function importProgress() {
 // ===================== INDICE / NAVIGAZIONE =====================
 function buildToc() {
   const panel = document.getElementById('tocPanel');
-  let html = '<h4>Strategia & progetti</h4>';
+  let html = '<h4>Fai — missioni & progetti</h4>';
   const strat = [
+    { id: 'sec-missioni', ti: '🎯', name: 'Le 8 missioni' },
     { id: 'sec-missione', ti: '🚀', name: 'Missione Giorno 1' },
     { id: 'sec-salto', ti: '⭐', name: 'Il Salto (capstone)' },
     { id: 'sec-bio', ti: '🧬', name: 'Progetto Salute / Bio' },
+    { id: 'sec-linux', ti: '🐧', name: 'Linux & sicurezza pratica' },
+    { id: 'sec-toolbox', ti: '🤖', name: 'Studia con l\'IA' },
+  ];
+  strat.forEach(s => {
+    html += `<a class="toc-link" onclick="tocGo('${s.id}')"><span class="ti">${s.ti}</span>${s.name}</a>`;
+  });
+  html += '<div class="toc-sep"></div><h4>Approfondimenti</h4>';
+  const extra = [
     { id: 'sec-finanza', ti: '💹', name: 'Finanza, AI & Quant' },
-    { id: 'sec-personalizza', ti: '✨', name: 'Personalizza per te' },
     { id: 'sec-olimpiadi', ti: '🏅', name: 'Olimpiadi di Matematica' },
     { id: 'sec-mamba', ti: '🐍', name: 'Costruisci un Mamba' },
     { id: 'sec-viral', ti: '💥', name: 'Progetti virali su GitHub' },
     { id: 'sec-jensen', ti: '🟢', name: 'Playbook di Jensen Huang' },
     { id: 'sec-novita', ti: '📰', name: 'Novità dal mondo IA' },
   ];
-  strat.forEach(s => {
+  extra.forEach(s => {
     html += `<a class="toc-link" onclick="tocGo('${s.id}')"><span class="ti">${s.ti}</span>${s.name}</a>`;
   });
-  html += '<div class="toc-sep"></div><h4>Il percorso</h4>';
+  html += '<div class="toc-sep"></div><h4>Studia — il percorso</h4>';
   DATA.forEach(b => {
     html += `<a class="toc-link" onclick="tocGo('block-${b.id}')"><span class="ti">${b.icon}</span>${b.title}</a>`;
   });
@@ -1726,6 +1782,8 @@ function toggleToc() { document.getElementById('tocPanel').classList.toggle('ope
 function tocGo(id) {
   const el = document.getElementById(id);
   if (el) {
+    // se la sezione è dentro gli Approfondimenti collassati, aprili
+    if (el.closest('.approf-zone')) setApprof(true);
     const block = el.closest('.block-card');
     // apri il blocco se chiuso
     const mods = el.querySelector ? el.querySelector('.modules-container') : null;
@@ -1737,6 +1795,53 @@ function tocGo(id) {
   document.getElementById('tocPanel').classList.remove('open');
 }
 buildToc();
+
+// ===================== LE 8 MISSIONI =====================
+const MISSIONS = [
+  { t: 'App AI online', d: 'La tua prima app con l\'API di Claude, pubblicata e con un link da condividere (Missione Giorno 1).' },
+  { t: 'Backprop da zero', d: 'micrograd riscritto a mano: capisci come una rete impara davvero (Blocco 02).' },
+  { t: 'Un mini-GPT che genera testo', d: 'Un language model a caratteri, allenato su un testo scelto da te (Blocco 02).' },
+  { t: 'GPT-2 riprodotto', d: 'nanoGPT allenato su GPU: il salto da giocattolo a modello vero (Blocco 03).' },
+  { t: 'App RAG sui documenti', d: 'Domande e risposte sui tuoi PDF: chunking, embedding, retrieval, Claude (Blocco 04).' },
+  { t: 'Un agente con strumenti', d: 'Un agente che usa tool (ricerca, codice) e completa task da solo (Blocco 05).' },
+  { t: 'Reso sicuro + su un server', d: 'Difese contro prompt injection, evals, e deploy su un server Linux tuo (Blocchi 11 + 🐧).' },
+  { t: 'Capstone + teardown pubblicato', d: 'Il Salto: un lavoro di frontiera (Mamba, TinyZero, interpretability) spiegato pubblicamente.' },
+];
+function renderMissions() {
+  const list = document.getElementById('missions-list');
+  if (!list) return;
+  list.innerHTML = MISSIONS.map((m, i) => {
+    const done = localStorage.getItem('llm_mission_' + i) === '1';
+    return `<div class="resource-item ${done ? 'completed' : ''}" style="padding:11px 14px;">
+      <div class="resource-check ${done ? 'done' : ''}" onclick="toggleMission(${i})">${done ? '✓' : ''}</div>
+      <div class="resource-content">
+        <div class="resource-title">${i + 1}. ${m.t}</div>
+        <div class="resource-meta">${m.d}</div>
+      </div>
+    </div>`;
+  }).join('');
+  const n = MISSIONS.filter((_, i) => localStorage.getItem('llm_mission_' + i) === '1').length;
+  const c = document.getElementById('missions-count');
+  if (c) { c.textContent = n + '/8'; c.style.color = n === 8 ? '#4ade80' : 'var(--cyan)'; }
+}
+function toggleMission(i) {
+  const k = 'llm_mission_' + i;
+  localStorage.setItem(k, localStorage.getItem(k) === '1' ? '0' : '1');
+  renderMissions();
+}
+renderMissions();
+
+// ===================== ZONA APPROFONDIMENTI =====================
+function setApprof(open) {
+  document.querySelectorAll('.approf-zone').forEach(z => { z.style.display = open ? 'block' : 'none'; });
+  const tog = document.getElementById('approf-tog');
+  if (tog) tog.classList.toggle('open', open);
+}
+function toggleApprof() {
+  const first = document.querySelector('.approf-zone');
+  setApprof(first && first.style.display === 'none');
+}
+
 // chiudi indice cliccando fuori
 document.addEventListener('click', (e) => {
   const panel = document.getElementById('tocPanel');
